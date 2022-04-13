@@ -1,0 +1,8 @@
+regions  地区表   4
+countries   国家表  4
+locations   位置表   5
+departments  部门表   8
+jobs   工作表   12
+employees  员工表   20
+job_history   入职记录表   10
+job_grades  职位等级表  6
