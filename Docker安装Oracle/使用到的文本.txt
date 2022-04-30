@@ -1,0 +1,23 @@
+
+source /home/oracle/.bash_profile
+select name,open_mode from v$pdbs
+
+sqlplus nologconnect as sysdba
+
+create user tyza66 identified by 123;
+create user lxcx identified by lxcx;
+
+sqlplus /as sysdba
+
+
+export ORACLE_HOME = /home/oracle/app/oracle/product/11.2.0/dbhome_2
+
+export ORACLE_SID = helowin
+
+export PATH = $ORACLE_HOME/bin:$PATH
+
+export ORACLE_HOME=/home/oracle/app/oracle/product/11.2.0/dbhome_2
+
+export ORACLE_SID=helowin
+export PATH=ORACLEHOME/bin:
+ORACLE_HOME/bin:ORACLE HOME/bin:PATH
