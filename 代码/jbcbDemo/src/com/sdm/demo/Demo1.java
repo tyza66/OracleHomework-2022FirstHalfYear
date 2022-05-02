@@ -29,6 +29,7 @@ public class Demo1 {
 			}
 			try {
 			      Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/helowin","test","test");
+			      System.out.println("连接成功");
 			      Statement st = con.createStatement();
 			      ResultSet rs = st.executeQuery ("SELECT * FROM Student");	
 			      while (rs.next()) {
@@ -40,6 +41,7 @@ public class Demo1 {
 			      con.close();
 			} catch (SQLException e) {
 			      e.printStackTrace();
+			      System.out.println("连接失败，请检查url，用户名，密码是否正确，数据库是否启动");
 			}
 
 	}
