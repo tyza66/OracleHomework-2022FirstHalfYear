@@ -1,4 +1,11 @@
 package com.sdm.demo;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  * jdbc练习1
  * @author shun_
@@ -15,9 +22,25 @@ public class Demo1 {
 	public static void main(String[] args) {
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
+				System.out.println("注册成功");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
+				System.out.println("注册失败 检查jar包和驱动名");
 			}
+			try {
+			      Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/helowin","test","test");
+			      Statement st = con.createStatement();
+			      ResultSet rs = st.executeQuery ("SELECT * FROM Student");	
+			      while (rs.next()) {
+			             
+			      }
+			      rs.close();
+			      st.close();
+			      con.close();
+			} catch (SQLException e) {
+			      e.printStackTrace();
+			}
+
 	}
 
 }
