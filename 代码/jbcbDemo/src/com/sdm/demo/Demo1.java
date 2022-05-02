@@ -32,7 +32,8 @@ public class Demo1 {
 			      Statement st = con.createStatement();
 			      ResultSet rs = st.executeQuery ("SELECT * FROM Student");	
 			      while (rs.next()) {
-			             
+			             int x = rs.getInt("a");
+			             String s = rs.getString("b");
 			      }
 			      rs.close();
 			      st.close();
