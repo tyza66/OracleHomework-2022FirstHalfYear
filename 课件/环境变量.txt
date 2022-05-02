@@ -1,0 +1,10 @@
+java_home
+【注】jdk实际的安装路径如：C:\Program Files\Java\jdk1.8.0_112
+
+classpath
+.;%java_home%\lib\dt.jar;%java_home%\lib\tools.jar;%java_home%\jre\lib\rt.jar;
+
+
+
+PATH			
+;%java_home%\bin;
