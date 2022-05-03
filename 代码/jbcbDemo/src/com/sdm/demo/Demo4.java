@@ -18,8 +18,15 @@ public class Demo4 {
 			String sql = "SELECT * FROM BUMEN";
 			ResultSet rs = st.executeQuery(sql);
 			while (rs.next()) {
-				
+				int bumenId = rs.getInt("bumenId");
+				String bumenName = rs.getString("bumenName");
+				String bumenDiZhi = rs.getString("bumenDizhi");
+				System.out.println(bumenId+","+bumenName+","+bumenDiZhi);
 			}
+			rs.close();
+			st.close();
+			con.close();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("注册失败");
