@@ -2,6 +2,7 @@ package com.sdm.demo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -15,6 +16,8 @@ public class Demo4 {
 			Connection con = DriverManager.getConnection(url, root, pwd);
 			Statement st = con.createStatement();
 			String sql = "SELECT * FROM BUMEN";
+			ResultSet rs = st.executeQuery(sql);
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("注册失败");
