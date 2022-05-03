@@ -41,7 +41,7 @@ public class Demo1 {
 			Statement st = con.createStatement();
 			// 添加 【DML】结果是有多少条记录被更改
 			int count = st.executeUpdate(sql);
-			System.out.println(count+"条数据背增加");
+			System.out.println(count+"条数据被增加");
 			//关闭资源
 			st.close();
 			con.close();
