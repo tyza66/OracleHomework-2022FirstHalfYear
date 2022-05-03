@@ -34,12 +34,16 @@ public class Demo1 {
 		int bumenId = 11;
 		String bumenName = "A集团";
 		String bumenDiZhi = "胡果山";
-		String sql = "INSERT INTO BUMEN VALUES('"+bumenId+"','"+ bumenName +"','"+ bumenDiZhi +"')";
+		String sql = "INSERT INTO BUMEN VALUES("+bumenId+",'"+ bumenName +"','"+ bumenDiZhi +"')";
 		try {
 			Connection con = DriverManager.getConnection(url, root, pwd);
 			System.out.println("连接成功");
 			Statement st = con.createStatement();
-			// 添加
+			// 添加 【DML】结果是有多少条记录被更改
+			int count = st.executeUpdate(sql);
+			//关闭资源
+			st.close();
+			con.close();
 			// ResultSet rs = st.executeQuery ("SELECT * FROM BUMEN");
 			// while (rs.next()) {
 			// int x = rs.getInt("a");
@@ -49,9 +53,7 @@ public class Demo1 {
 			e.printStackTrace();
 			System.out.println("连接失败，请检查url，用户名，密码是否正确，数据库是否启动");
 		} finally {
-			// rs.close();
-			// st.close();
-			// con.close();
+			
 		}
 
 	}
