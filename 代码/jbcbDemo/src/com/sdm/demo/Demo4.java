@@ -17,7 +17,9 @@ public class Demo4 {
 			Statement st = con.createStatement();
 			String sql = "SELECT * FROM BUMEN";
 			ResultSet rs = st.executeQuery(sql);
-			
+			while (rs.next()) {
+				
+			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			System.out.println("注册失败");
