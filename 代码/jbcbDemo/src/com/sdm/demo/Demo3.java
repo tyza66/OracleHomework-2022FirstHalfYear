@@ -2,7 +2,6 @@ package com.sdm.demo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -27,7 +26,6 @@ public class Demo3 {
 		String pwd = "test";
 		// 查询信息
 		int bumenId = 11;
-		String bumenDiZhi = "我家";
 		String sql = "DELETE FROM BUMEN WHERE bumenId = " + bumenId;
 		try {
 			Connection con = DriverManager.getConnection(url, root, pwd);
