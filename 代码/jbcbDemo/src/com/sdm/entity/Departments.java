@@ -28,4 +28,20 @@ public class Departments {
 	public void setLoactionId(int loactionId) {
 		this.loactionId = loactionId;
 	}
+	public Departments(int departmentId, String departmentName, int managerId, int loactionId) {
+		super();
+		this.departmentId = departmentId;
+		this.departmentName = departmentName;
+		this.managerId = managerId;
+		this.loactionId = loactionId;
+	}
+	public Departments() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "Departments [departmentId=" + departmentId + ", departmentName=" + departmentName + ", managerId="
+				+ managerId + ", loactionId=" + loactionId + "]";
+	}
+	
 }

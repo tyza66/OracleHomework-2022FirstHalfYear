@@ -1,12 +1,47 @@
 package com.sdm.demo;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
+
+import com.sdm.entity.Departments;
 
 public class JdbcDepartmentsDemo {
 	public static void main(String[] args) {
 	}
 
-	public List selectAll() {
-		return null;
+	public List<Departments> selectAll() {
+		List<Departments> list = null;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@localhost:1521/helowin";
+			String root = "test";
+			String pwd = "test";
+			Connection con = DriverManager.getConnection(url, root, pwd);
+			String sql = "SELECT * FROM DEPARTMENTS";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				int departmentId = rs.getInt("departemnt_id");
+				String departmentName = rs.getString("department_name");
+				int managerId = rs.getInt("manager_id");
+				int locationId = rs.getInt("location_id");
+				Departments departments = new Departments(departmentId,departmentName,managerId,locationId);
+				list.add(departments);
+			}
+			rs.close();
+			ps.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
 	}
 }
