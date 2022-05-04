@@ -43,4 +43,30 @@ public class JdbcDepartmentsDemo {
 		}
 		return list;
 	}
+	public int insert(Departments departments) {
+		int code = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@localhost:1521/helowin";
+			String root = "test";
+			String pwd = "test";
+			Connection con = DriverManager.getConnection(url, root, pwd);
+			String sql = "insert into departments values(?,?,?,?)";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, departments.getDepartmentId());
+			ps.setString(2, departments.getDepartmentName());
+			ps.setInt(3, departments.getManagerId());
+			ps.setInt(4, departments.getLoactionId());
+			code = ps.executeUpdate();
+			ps.close();
+			con.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return code;
+	}
 }

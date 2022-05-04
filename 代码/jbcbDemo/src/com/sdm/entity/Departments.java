@@ -41,7 +41,7 @@ public class Departments {
 	@Override
 	public String toString() {
 		return "Departments [departmentId=" + departmentId + ", departmentName=" + departmentName + ", managerId="
-				+ managerId + ", loactionId=" + loactionId + "]";
+				+ managerId + ", loactionId=" + loactionId + "]\n";
 	}
 	
 }
