@@ -22,6 +22,7 @@ public class Demo6 {
 			String yhm = sc.next();
 			System.out.println("请输入密码：");
 			String mm = sc.next();
+			sc.close();
 			String sql = "SELECT * FROM EMPLOYEES WHERE first_name = '"+ yhm +"' AND last_name = '"+ mm +"'";
 			//查询
 			ResultSet rs = st.executeQuery(sql);
