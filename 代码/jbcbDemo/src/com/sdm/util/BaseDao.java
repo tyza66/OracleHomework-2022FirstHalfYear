@@ -19,10 +19,8 @@ public class BaseDao {
 			Class.forName(DRIVER);
 			conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return conn;
@@ -43,6 +41,12 @@ public class BaseDao {
 	
 	public int update(String sql,Object[] params) {
 		int code = 0;
+		conn = this.getConn();
+		try {
+			ps = conn.prepareStatement(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return code;
 	}
 	
