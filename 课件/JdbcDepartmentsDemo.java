@@ -17,7 +17,7 @@ import com.chinasoft.wxx.entity.Departments;
  */
 public class JdbcDepartmentsDemo {
 	
-	//修饰符 返回值类型  方法名(参数列表){ 方法体 }
+	//修饰符 返回值类型  方法名(形参列表){ 方法体 }
 	
 	/*List 存储数据，有顺序 且可重复
 	 * Set  不可以重复
@@ -90,5 +90,37 @@ public class JdbcDepartmentsDemo {
 		}
 		return code;
 	}
+	
+	//修改部门名称方法
+	public int updateName(int id,String name) {
+//		定义一个变量code 用于存放修改的结果 -- 成功修改的数据条数 -- 初始值为0
+		int code = 0;
+		//开始利用jdbc技术 实现根据部门编号修改部门名称
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+			Connection conn = DriverManager.getConnection(url, "scott", "orcl");
+			String sql = "update departments set department_name = ? where department_id =?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			//利用ps对象 将？给替换成具体的数据
+			ps.setString(1, name);
+			ps.setInt(2, id);
+			//执行sql
+			code = ps.executeUpdate();
+			//关闭资源
+			ps.close();
+			conn.close();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		返回返回值
+		return code;
+	}
+	
+	//删除指定部门信息
 	
 }
