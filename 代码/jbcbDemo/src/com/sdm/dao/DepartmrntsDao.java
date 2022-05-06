@@ -12,6 +12,7 @@ public class DepartmrntsDao {
 	// 所有方法都需要baseDao将其升级为属性
 	BaseDao dao = new BaseDao();
 
+	// 查
 	public List<Departments> selectAll() {
 		List<Departments> list = new ArrayList<Departments>();
 		String sql = "select * from departments";
@@ -33,6 +34,7 @@ public class DepartmrntsDao {
 		return list;
 	}
 
+	// 增
 	public int insert(Departments d) {
 		int code = 0;
 		String sql = "INSERT INTO DEPARTMENTS VALUES(?,?,?,?)";
@@ -41,9 +43,17 @@ public class DepartmrntsDao {
 		return code;
 	}
 
+	// 删
 	public int deleteById(int id) {
 		String sql = "delete from departments where department_id = ?";
 		Object[] params = { id };
+		return dao.update(sql, params);
+	}
+
+	// 改
+	public int updateById(int id, Departments d) {
+		String sql = "UPDATE DEPARTMENTS SET department_name = ?,manager_id = ?,location_id = ? WHERE department_id = ?";
+		Object[] params = { d.getDepartmentName(), d.getManagerId(), d.getLoactionId(), id };
 		return dao.update(sql, params);
 	}
 }
