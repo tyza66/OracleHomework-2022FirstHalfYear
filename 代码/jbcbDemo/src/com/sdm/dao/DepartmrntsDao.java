@@ -41,4 +41,9 @@ public class DepartmrntsDao {
 		return code;
 	}
 
+	public int deleteById(int id) {
+		String sql = "delete from departments where department_id = ?";
+		Object[] params = { id };
+		return dao.update(sql, params);
+	}
 }
