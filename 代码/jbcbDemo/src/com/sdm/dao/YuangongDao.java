@@ -23,7 +23,7 @@ public class YuangongDao {
 				int jingliId = rs.getInt("JINGLIID");
 				String ruzhiRiqi = rs.getString("RUZHIRIQI");
 				int jibengongzi = rs.getInt("JIBENGONGZI");
-				int jiangjin = rs.getInt("JIANGJINd");
+				int jiangjin = rs.getInt("JIANGJIN");
 				int bumenId = rs.getInt("BUMENID");
 				Yuangong yuangong = new Yuangong(yuangongID, yuangongName, yuangongZhiwei, jingliId, ruzhiRiqi,
 						jibengongzi, jiangjin, bumenId);
@@ -60,7 +60,7 @@ public class YuangongDao {
 				int jingliId = rs.getInt("JINGLIID");
 				String ruzhiRiqi = rs.getString("RUZHIRIQI");
 				int jibengongzi = rs.getInt("JIBENGONGZI");
-				int jiangjin = rs.getInt("JIANGJINd");
+				int jiangjin = rs.getInt("JIANGJIN");
 				int bumenId = rs.getInt("BUMENID");
 				Yuangong yuangong = new Yuangong(yuangongID, yuangongName, yuangongZhiwei, jingliId, ruzhiRiqi,
 						jibengongzi, jiangjin, bumenId);
@@ -100,7 +100,7 @@ public class YuangongDao {
 				int jingliId = rs.getInt("JINGLIID");
 				String ruzhiRiqi = rs.getString("RUZHIRIQI");
 				int jibengongzi = rs.getInt("JIBENGONGZI");
-				int jiangjin = rs.getInt("JIANGJINd");
+				int jiangjin = rs.getInt("JIANGJIN");
 				int bumenId = rs.getInt("BUMENID");
 				Yuangong yuangong = new Yuangong(yuangongID, yuangongName, yuangongZhiwei, jingliId, ruzhiRiqi,
 						jibengongzi, jiangjin, bumenId);
@@ -131,7 +131,7 @@ public class YuangongDao {
 				int jingliId = rs.getInt("JINGLIID");
 				String ruzhiRiqi = rs.getString("RUZHIRIQI");
 				int jibengongzi = rs.getInt("JIBENGONGZI");
-				int jiangjin = rs.getInt("JIANGJINd");
+				int jiangjin = rs.getInt("JIANGJIN");
 				int bumenId = rs.getInt("BUMENID");
 				Yuangong yuangong = new Yuangong(yuangongID, yuangongName, yuangongZhiwei, jingliId, ruzhiRiqi,
 						jibengongzi, jiangjin, bumenId);
