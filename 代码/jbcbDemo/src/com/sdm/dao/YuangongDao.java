@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.sdm.entity.Departments;
 import com.sdm.entity.Yuangong;
 import com.sdm.util.BaseDao;
 
@@ -115,6 +113,39 @@ public class YuangongDao {
 		return list;
 	}
 	// 6.输入编号，删除员工信息
+	public int deleteById(int id) {
+		String sql = "delete from yuangong where YUANGONGID = ?";
+		Object[] params = { id };
+		return dao.update(sql, params);
+	}
 	// 7.按照员工姓名模糊搜索员工信息
+	public List<Yuangong> selectByName(String name) {
+		List<Yuangong> list = new ArrayList<Yuangong>();
+		String sql = "SELECT * FROM yuangong WHERE YUANGONGNAME like '%"+ name +"%'";
+		ResultSet rs = dao.query(sql, null);
+		try {
+			while (rs.next()) {
+				int yuangongID = rs.getInt("YUANGONGID");
+				String yuangongName = rs.getString("YUANGONGNAME");
+				String yuangongZhiwei = rs.getString("YUANGONGZHIWEI");
+				int jingliId = rs.getInt("JINGLIID");
+				String ruzhiRiqi = rs.getString("RUZHIRIQI");
+				int jibengongzi = rs.getInt("JIBENGONGZI");
+				int jiangjin = rs.getInt("JIANGJINd");
+				int bumenId = rs.getInt("BUMENID");
+				Yuangong yuangong = new Yuangong(yuangongID, yuangongName, yuangongZhiwei, jingliId, ruzhiRiqi,
+						jibengongzi, jiangjin, bumenId);
+				list.add(yuangong);
+			}
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	// 8.批量删除员工【提高】
+	public int deleteAll() {
+		String sql = "delete from yuangong";
+		return dao.update(sql, null);
+	}
 }

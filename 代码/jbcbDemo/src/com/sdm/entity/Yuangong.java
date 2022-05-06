@@ -1,79 +1,96 @@
 package com.sdm.entity;
 
 public class Yuangong {
-	private int YuangongID;
-	private String YuangongName;
-	private String YuangongZhiwei;
+	private int yuangongID;
+	private String yuangongName;
+	private String yuangongZhiwei;
 	private int jingliId;
-	private String RuzhiRiqi;
-	private int Jibengongzi;
+	private String ruzhiRiqi;
+	private int jibengongzi;
 	private int jiangjin;
 	private int bumenId;
+
 	public int getYuangongID() {
-		return YuangongID;
+		return yuangongID;
 	}
+
 	public void setYuangongID(int yuangongID) {
-		YuangongID = yuangongID;
+		this.yuangongID = yuangongID;
 	}
+
 	public String getYuangongName() {
-		return YuangongName;
+		return yuangongName;
 	}
+
 	public void setYuangongName(String yuangongName) {
-		YuangongName = yuangongName;
+		this.yuangongName = yuangongName;
 	}
+
 	public String getYuangongZhiwei() {
-		return YuangongZhiwei;
+		return yuangongZhiwei;
 	}
+
 	public void setYuangongZhiwei(String yuangongZhiwei) {
-		YuangongZhiwei = yuangongZhiwei;
+		this.yuangongZhiwei = yuangongZhiwei;
 	}
+
 	public int getJingliId() {
 		return jingliId;
 	}
+
 	public void setJingliId(int jingliId) {
 		this.jingliId = jingliId;
 	}
+
 	public String getRuzhiRiqi() {
-		return RuzhiRiqi;
+		return ruzhiRiqi;
 	}
+
 	public void setRuzhiRiqi(String ruzhiRiqi) {
-		RuzhiRiqi = ruzhiRiqi;
+		this.ruzhiRiqi = ruzhiRiqi;
 	}
+
 	public int getJibengongzi() {
-		return Jibengongzi;
+		return jibengongzi;
 	}
+
 	public void setJibengongzi(int jibengongzi) {
-		Jibengongzi = jibengongzi;
+		this.jibengongzi = jibengongzi;
 	}
+
 	public int getJiangjin() {
 		return jiangjin;
 	}
+
 	public void setJiangjin(int jiangjin) {
 		this.jiangjin = jiangjin;
 	}
+
 	public int getBumenId() {
 		return bumenId;
 	}
+
 	public void setBumenId(int bumenId) {
 		this.bumenId = bumenId;
 	}
+
 	@Override
 	public String toString() {
-		return "Yuangong [YuangongID=" + YuangongID + ", YuangongName=" + YuangongName + ", YuangongZhiwei="
-				+ YuangongZhiwei + ", jingliId=" + jingliId + ", RuzhiRiqi=" + RuzhiRiqi + ", Jibengongzi="
-				+ Jibengongzi + ", jiangjin=" + jiangjin + ", bumenId=" + bumenId + "]";
+		return "Yuangong [yuangongID=" + yuangongID + ", yuangongName=" + yuangongName + ", yuangongZhiwei="
+				+ yuangongZhiwei + ", jingliId=" + jingliId + ", ruzhiRiqi=" + ruzhiRiqi + ", jibengongzi="
+				+ jibengongzi + ", jiangjin=" + jiangjin + ", bumenId=" + bumenId + "]";
 	}
+
 	public Yuangong(int yuangongID, String yuangongName, String yuangongZhiwei, int jingliId, String ruzhiRiqi,
 			int jibengongzi, int jiangjin, int bumenId) {
 		super();
-		YuangongID = yuangongID;
-		YuangongName = yuangongName;
-		YuangongZhiwei = yuangongZhiwei;
+		this.yuangongID = yuangongID;
+		this.yuangongName = yuangongName;
+		this.yuangongZhiwei = yuangongZhiwei;
 		this.jingliId = jingliId;
-		RuzhiRiqi = ruzhiRiqi;
-		Jibengongzi = jibengongzi;
+		this.ruzhiRiqi = ruzhiRiqi;
+		this.jibengongzi = jibengongzi;
 		this.jiangjin = jiangjin;
 		this.bumenId = bumenId;
 	}
-	
 }
