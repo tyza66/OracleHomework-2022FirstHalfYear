@@ -51,9 +51,9 @@ public class DepartmrntsDao {
 	}
 
 	// 改
-	public int updateById(int id, Departments d) {
+	public int updateById(Departments d) {
 		String sql = "UPDATE DEPARTMENTS SET department_name = ?,manager_id = ?,location_id = ? WHERE department_id = ?";
-		Object[] params = { d.getDepartmentName(), d.getManagerId(), d.getLoactionId(), id };
+		Object[] params = { d.getDepartmentName(), d.getManagerId(), d.getLoactionId(), d.getDepartmentId() };
 		return dao.update(sql, params);
 	}
 }
