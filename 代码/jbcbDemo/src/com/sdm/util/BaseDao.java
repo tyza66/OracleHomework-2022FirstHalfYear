@@ -69,8 +69,6 @@ public class BaseDao {
 			rs = ps.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			this.closeAll();
 		}
 		return rs;
 	}
