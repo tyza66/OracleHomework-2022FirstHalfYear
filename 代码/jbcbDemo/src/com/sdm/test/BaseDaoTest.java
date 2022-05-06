@@ -15,7 +15,7 @@ public class BaseDaoTest {
 		//测试查询
 		String sql= "select * from bumen";
 		ResultSet rs = dao.query(sql, null);
-		whlie(rs.next()){
+		while(rs.next()){
 			
 		}
 	}
