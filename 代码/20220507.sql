@@ -68,7 +68,16 @@ CREATE table student_plus(
   references class_info(claid)
 );
 
+--创建班级序列
+CREATE sequence class_info_seq;
+select class_info_seq.NEXTVAL from dual;
+
 INSERT INTO CLASS_INFO VALUES(1,'软工4班');
+INSERT INTO CLASS_INFO VALUES(class_info_seq.NEXTVAL,'软工5班');
+commit;
+select * from CLASS_INFO;
+
+select * from student_plus;
 
 
 
