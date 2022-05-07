@@ -29,4 +29,46 @@ DROP SEQUENCE seq_test;
 唯一约束：不能重复
 检查约束：必须满足指定条件
 外键约束：必须符合指定主表指定主键的数据
+PRIMARY KEY
+NOT NULL
+UNIQUE
+CHECK
+FOREIGN KEY
 */
+
+DROP TABLE STUDENT_PLUS;
+
+SELECT * FROM student_PLUS;
+
+--创建学生表为例
+/*
+学号  唯一标识且稳定--> 主键约束
+姓名  非空
+性别  检查约束
+联系方式  唯一约束
+班号 外键约束
+*/
+
+create table class_info(
+  claid number(2) primary key,
+  claname varchar2(30) not null
+);
+
+--创建主表之后才可以为从表添加对应的约束
+
+CREATE table student_plus(
+  stuid number(4) primary key,
+  stuname varchar2(15) not null,
+  stusex char(1) check(stusex='1' or stusex='0'),
+  stutel varchar2(15) unique,
+  --从表的外键字段与主表的主键字段数据类型及长度应该一致
+  claid number(2)，
+  --表级约束的定义 constraint 约束名 约束类型（要约束的字段）
+  constraint student_classinfo_fk foreign key(claid)
+  references class_info(claid)
+);
+
+INSERT INTO CLASS_INFO VALUES(1,'软工4班');
+
+
+
