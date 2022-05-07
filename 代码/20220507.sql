@@ -10,4 +10,12 @@ CREATE SEQUENCE seq_test
 increment by 5
 start with 2;
 
---使用序列
+--使用序列  【注意】下一个值应该在当前值之后diaoyong
+--nextval 下一个值
+--currval 当前值
+
+--只有执行了一次nextval之后序列才可以被启动，不然它是没有被定义的
+select seq_test.nextval from dual;
+
+--查询序列的当前值
+select seq_test.currval from dual;
