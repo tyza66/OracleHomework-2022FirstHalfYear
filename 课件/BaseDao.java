@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * BaseDao 用于封装 jdbc中 重复代码
+ * BaseDao 用于简单封装 jdbc中 重复代码
  * 
  * 注册驱动   √
  * 建立连接   √

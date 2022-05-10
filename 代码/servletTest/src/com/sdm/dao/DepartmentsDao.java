@@ -4,11 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.sdm.entity.Departments;
-import com.sdm.util.BaseDao;
+import com.sdm.dao.Departments;
+import com.sdm.dao.BaseDao;
 
 //封装了对Departments表数据的操作
-public class DepartmrntsDao {
+public class DepartmentsDao {
 	// 所有方法都需要baseDao将其升级为属性
 	BaseDao dao = new BaseDao();
 

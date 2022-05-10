@@ -1,4 +1,4 @@
-package com.sdm;
+package com.sdm.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
