@@ -1,5 +1,6 @@
 # OracleHomework-2022FirstHalfYear
 ### Oracle作业-2022年上半年
+- 课上使用的IDE是eclipse
 - 2022年上 Oracle数据库作业  
 - "课件"中是老师课堂中提供的资源们
 - "代码/jbcbDemo"是一个课堂JDBC教学练习
