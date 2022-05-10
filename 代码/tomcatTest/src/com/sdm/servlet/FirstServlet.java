@@ -32,6 +32,7 @@ public class FirstServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		//编写代码区域
 		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		for(int i=1;i<=8;i++) {
 			if(i%2==0) {
