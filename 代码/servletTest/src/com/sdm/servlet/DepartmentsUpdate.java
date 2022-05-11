@@ -8,19 +8,21 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sdm.dao.Departments;
 import com.sdm.dao.DepartmentsDao;
 
 /**
- * Servlet implementation class DepartmentsDelete
+ * Servlet implementation class DepartmentsUpdate
  */
-@WebServlet("/departments/delete.do")
-public class DepartmentsDelete extends HttpServlet {
+@WebServlet("/departments/update.do")
+public class DepartmentsUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DepartmentsDelete() {
+    public DepartmentsUpdate() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,12 +35,18 @@ public class DepartmentsDelete extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		String did = request.getParameter("did");
-		//System.out.println(did);
+		System.out.println(did);
+		String dname = request.getParameter("dname");
+		String mid = request.getParameter("mid");
+		String lid = request.getParameter("lid");
 		int departmentsId = Integer.parseInt(did);
+		int managerId = Integer.parseInt(mid);
+		int locationId = Integer.parseInt(lid);
+		Departments d = new Departments(departmentsId, dname, managerId, locationId);
 		DepartmentsDao dd = new DepartmentsDao();
-		int code = dd.deleteById(departmentsId);
+		int code = dd.updateById(d);
 		PrintWriter out = response.getWriter();
-		out.print(code+"条数据被删除");
+		out.print(code+"条数据被修改");
 		out.close();
 		System.out.println(code);
 	}
