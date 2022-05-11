@@ -29,12 +29,18 @@ public class BumenMapper {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			baseDao.closeAll();
 		}
 		return list;
 	}
 
 	public int insert(Bumen bumen) {
-		return 0;
+		int code = 0;
+		String sql = "INSERT INTO bumen VALUES(?,?,?)";
+		Object[] params = { bumen.getBumenId(), bumen.getBumenName(), bumen.getBumenDiZhi() };
+		code = baseDao.update(sql, params);
+		return code;
 	}
 
 	public int update(Bumen bumen) {
