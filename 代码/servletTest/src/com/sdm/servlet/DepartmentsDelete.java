@@ -1,52 +1,48 @@
 package com.sdm.servlet;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sdm.dao.Departments;
+import com.sdm.dao.DepartmentsDao;
+
 /**
- * Servlet implementation class SecondServlet
+ * Servlet implementation class DepartmentsDelete
  */
-@WebServlet("/second.do")
-public class SecondServlet extends HttpServlet {
+@WebServlet("/departments/delete.do")
+public class DepartmentsDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SecondServlet() {
+    public DepartmentsDelete() {
         super();
         // TODO Auto-generated constructor stub
-        System.out.println("调用构造器创建对象。");
     }
-
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
-	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
-		System.out.println("调用初始化方法对Servlet进行初始化。");
-	}
-
-	/**
-	 * @see Servlet#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-		System.out.println("调用destroy进行销毁。");
-	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("通过识别get请求方式来识别，来调用我们的doget方法。");
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		String did = request.getParameter("did");
+		System.out.println(did);
+		int departmentsId = Integer.parseInt(did);
+		DepartmentsDao dd = new DepartmentsDao();
+		int code = dd.deleteById(departmentsId);
+		PrintWriter out = response.getWriter();
+		out.print(code+"条数据被删除");
+		out.close();
+		System.out.println(code);
 	}
 
 	/**

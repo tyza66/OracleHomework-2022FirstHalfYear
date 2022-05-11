@@ -9,19 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sdm.dao.Departments;
 import com.sdm.dao.DepartmentsDao;
 
 /**
- * Servlet implementation class DepartmentsInfoServlet
+ * Servlet implementation class DepartmentsAddServlet
  */
-@WebServlet("/departments/info.do")
-public class DepartmentsInfoServlet extends HttpServlet {
+@WebServlet("/departments/add.do")
+public class DepartmentsAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public DepartmentsInfoServlet() {
+	public DepartmentsAddServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -35,10 +36,21 @@ public class DepartmentsInfoServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
+		String did = request.getParameter("did");
+		System.out.println(did);
+		String dname = request.getParameter("dname");
+		String mid = request.getParameter("mid");
+		String lid = request.getParameter("lid");
+		int departmentsId = Integer.parseInt(did);
+		int managerId = Integer.parseInt(mid);
+		int locationId = Integer.parseInt(lid);
+		Departments d = new Departments(departmentsId, dname, managerId, locationId);
 		DepartmentsDao dd = new DepartmentsDao();
-		PrintWriter pw = response.getWriter();
-		pw.print(dd.selectAll());
-		pw.close();
+		int code = dd.insert(d);
+		PrintWriter out = response.getWriter();
+		out.print(code+"条数据被添加");
+		out.close();
+		System.out.println(code);
 	}
 
 	/**

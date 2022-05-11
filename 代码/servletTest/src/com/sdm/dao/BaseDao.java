@@ -47,7 +47,7 @@ public class BaseDao {
 			for (int i = 0; i < params.length; i++) {
 				ps.setObject(i + 1, params[i]);
 			}
-			ps.executeUpdate();
+			code = ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
