@@ -43,11 +43,19 @@ public class BumenMapper {
 		return code;
 	}
 
-	public int update(Bumen bumen) {
-		return 0;
+	public int updateById(Bumen bumen) {
+		int code = 0;
+		String sql = "update bumen set bumenname = ?,BUMENDIZHI = ? where bumenID = ?";
+		Object[] params = { bumen.getBumenName(), bumen.getBumenDiZhi(), bumen.getBumenId() };
+		code = baseDao.update(sql, params);
+		return code;
 	}
 
 	public int delete(int bumenId) {
-		return 0;
+		int code = 0;
+		String sql = "delete from bumen where bumenID = ?";
+		Object[] params = { bumenId };
+		code = baseDao.update(sql, params);
+		return code;
 	}
 }
