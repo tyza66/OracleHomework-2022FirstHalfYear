@@ -18,4 +18,14 @@ public class BumenServiceImp implements BumenService {
 	public int bumenAdd(Bumen bumen) {
 		return bumenMapper.insert(bumen);
 	}
+	
+	@Override
+	public int bumenUpdate(Bumen bumen) {
+		return bumenMapper.updateById(bumen);
+	}
+	
+	@Override
+	public int bumenDelete(int id) {
+		return bumenMapper.delete(id);
+	}
 }
