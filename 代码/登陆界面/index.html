@@ -32,21 +32,31 @@
             <div id="login">
                 <div id="loginin">
                     <form>
+                        <h2 class="text-center">用户登录</h2>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">在此输入账号：</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <small id="emailHelp" class="form-text text-muted">瞎编一个就行</small>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">账号</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+
+                            <small id="emailHelp" class="form-text text-muted">瞎编一个就行,不用太认真</small>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">在此输入密码：</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">密码</span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Username"
+                                aria-describedby="basic-addon1">
                         </div>
+
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">记住我</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">登录</button>
+                        <button type="submit" class="btn btn-primary text-center" style="margin-left:640px">登录</button>
                     </form>
                 </div>
             </div>

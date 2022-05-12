@@ -26,16 +26,16 @@ p {
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
-    background: -webkit-linear-gradient(red, blue);
+    background: -webkit-linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
     /* Safari 5.1 - 6.0 */
 
-    background: -o-linear-gradient(red, blue);
+    background: -o-linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
     /* Opera 11.1 - 12.0 */
 
-    background: -moz-linear-gradient(red, blue);
+    background: -moz-linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
     /* Firefox 3.6 - 15 */
 
-    background: linear-gradient(red, blue);
+    background: linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
     /* 标准的语法（必须放在最后） */
 
 }
@@ -45,8 +45,9 @@ p {
     background-color: aliceblue;
     border-radius: 10px;
     margin: 0 auto;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
+    margin-top: 100px;
 }
 
 #loginin{
