@@ -8,9 +8,14 @@ import com.sdm.service.BumenService;
 
 public class BumenServiceImp implements BumenService {
 	BumenMapper bumenMapper = new BumenMapper();
+
 	@Override
 	public List<Bumen> bumenInfo() {
 		return bumenMapper.selectAll();
 	}
-
+	
+	@Override
+	public int bumenAdd(Bumen bumen) {
+		return bumenMapper.insert(bumen);
+	}
 }

@@ -6,4 +6,5 @@ import com.sdm.entity.Bumen;
 
 public interface BumenService {
 	List<Bumen> bumenInfo();
+	int bumenAdd(Bumen bumen);
 }
