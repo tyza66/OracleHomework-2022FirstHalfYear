@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-size: larger;
+    color: whitesmoke;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+#fix{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+}
+
+.bg-contect{
+    height: 4rem;
+}
+
+#bg {
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    background: -webkit-linear-gradient(red, blue);
+    /* Safari 5.1 - 6.0 */
+
+    background: -o-linear-gradient(red, blue);
+    /* Opera 11.1 - 12.0 */
+
+    background: -moz-linear-gradient(red, blue);
+    /* Firefox 3.6 - 15 */
+
+    background: linear-gradient(red, blue);
+    /* 标准的语法（必须放在最后） */
+
+}
+
+#login{
+    width: 800px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#loginin{
+    width: 700px;
+    background-color: aliceblue;
+    margin: 0 auto;
+}

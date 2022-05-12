@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index_main.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>登陆页面</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="fix">
+        <div class="container">
+            <a href="#" class="navbar-brand">登录</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <div class="nav-link" id="github">Github</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="bg">
+        <div class="bg-contect"></div>
+        <div class="container">
+            <div id="login">
+                <div id="loginin">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">在此输入账号：</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">瞎编一个就行</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">在此输入密码：</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">记住我</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
