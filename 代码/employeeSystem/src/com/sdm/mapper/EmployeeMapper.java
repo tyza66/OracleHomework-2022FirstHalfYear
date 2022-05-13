@@ -17,17 +17,17 @@ public class EmployeeMapper {
 		ResultSet rs = baseDao.query(sql, null);
 		try {
 			while (rs.next()) {
-				int employeeId = rs.getInt(0);
-				String firstName = rs.getString(1);
-				String lastName = rs.getString(2);
-				String email = rs.getString(3);
-				String phoneNumber = rs.getString(4);
-				String hireDate = rs.getString(5);
-				String jobId = rs.getString(6);
-				double salary = rs.getDouble(7);
-				double commissionPct = rs.getDouble(8);
-				int managerId = rs.getInt(9);
-				int departmentId = rs.getInt(10);
+				int employeeId = rs.getInt(1);
+				String firstName = rs.getString(2);
+				String lastName = rs.getString(3);
+				String email = rs.getString(4);
+				String phoneNumber = rs.getString(5);
+				String hireDate = rs.getString(6);
+				String jobId = rs.getString(7);
+				double salary = rs.getDouble(8);
+				double commissionPct = rs.getDouble(9);
+				int managerId = rs.getInt(10);
+				int departmentId = rs.getInt(11);
 				Employees e = new Employees(employeeId, firstName, lastName, email, phoneNumber, hireDate, jobId,
 						salary, commissionPct, managerId, departmentId);
 				list.add(e);
