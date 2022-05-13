@@ -1,6 +1,7 @@
 package com.sdm.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sdm.entity.Employees;
 import com.sdm.service.EmployeesService;
 import com.sdm.service.imp.EmployeesServiceImp;
 
@@ -34,7 +36,9 @@ public class EmployeesInfoController extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		EmployeesService employeesService = new EmployeesServiceImp();
-		response.getWriter().print(employeesService.employeeInfo());
+		List<Employees> list = employeesService.employeeInfo();
+		request.setAttribute("elist",list);
+		request.getRequestDispatcher("employeesInfo.jsp").forward(request, response);
 	}
 
 	/**
