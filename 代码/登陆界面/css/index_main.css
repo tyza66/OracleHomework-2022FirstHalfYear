@@ -23,35 +23,29 @@ p {
 #bg {
     width: 100vw;
     height: 100vh;
+    background-image: url(../img/bj1.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-
-    background: -webkit-linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
-    /* Safari 5.1 - 6.0 */
-
-    background: -o-linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
-    /* Opera 11.1 - 12.0 */
-
-    background: -moz-linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
-    /* Firefox 3.6 - 15 */
-
-    background: linear-gradient(rgb(206, 225, 228), rgb(22, 203, 182));
-    /* 标准的语法（必须放在最后） */
-
 }
 
 #login{
-    width: 800px;
-    background-color: aliceblue;
+    width: 380px;
     border-radius: 10px;
     margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 10px;
     margin-top: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 40vh;
+    left: 45vw;
 }
 
 #loginin{
-    width: 700px;
-    background-color: aliceblue;
+    width: 350px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
