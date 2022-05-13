@@ -17,7 +17,6 @@ public class EmployeeMapper {
 		ResultSet rs = baseDao.query(sql, null);
 		try {
 			while (rs.next()) {
-				int bumenId = rs.getInt("bumenID");
 				int employeeId = rs.getInt(0);
 				String firstName = rs.getString(1);
 				String lastName = rs.getString(2);

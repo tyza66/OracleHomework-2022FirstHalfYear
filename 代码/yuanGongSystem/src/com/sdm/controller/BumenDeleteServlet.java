@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sdm.entity.Bumen;
 import com.sdm.service.BumenService;
 import com.sdm.service.imp.BumenServiceImp;
 
