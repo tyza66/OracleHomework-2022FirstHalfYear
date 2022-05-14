@@ -61,7 +61,7 @@ public class EmployeeMapper {
 		return baseDao.update(sql, params);
 	}
 	
-	public Employees selectAll(int id){
+	public Employees selectById(int id){
 		String sql = "Select * from employees where employee_id = ?";
 		Object[] params = { id };
 		ResultSet rs = baseDao.query(sql, params);

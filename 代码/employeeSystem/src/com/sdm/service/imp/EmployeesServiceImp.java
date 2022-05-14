@@ -32,9 +32,18 @@ public class EmployeesServiceImp implements EmployeesService {
 
 	@Override
 	public int login(int id, String pwd) {
-		//调用mapper层的方法进行条件查询
-		return 0;
+		// 调用mapper层的方法进行条件查询
+		Employees employees = employeeMapper.selectById(id);
+		if (employees == null) {
+			// 若结果为空则该用户不存在返回404
+			return 404;
+		} else if (!employees.getFirstName().equals(pwd)) {
+			// 若用户存在但是密码错误，则返回500
+			return 500;
+		} else {
+			//若以上两个条件均不成立则登陆成功
+			return 200;
+		}
 	}
-	
-	
+
 }
