@@ -19,6 +19,22 @@ public class EmployeesServiceImp implements EmployeesService {
 	public int employeeAdd(Employees e) {
 		return employeeMapper.insert(e);
 	}
+
+	@Override
+	public int employeeUpdate(Employees e) {
+		return employeeMapper.updateById(e);
+	}
+
+	@Override
+	public int employeeDelete(int id) {
+		return employeeMapper.deleteById(id);
+	}
+
+	@Override
+	public int login(int id, String pwd) {
+		//调用mapper层的方法进行条件查询
+		return 0;
+	}
 	
 	
 }
