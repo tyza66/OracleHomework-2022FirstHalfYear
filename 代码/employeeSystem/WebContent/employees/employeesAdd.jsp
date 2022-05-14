@@ -8,7 +8,17 @@
 </head>
 <body>
 	<from action=""> 
-		
+		<p><input type="text" name="employeeid" placeholder="请输入员工编号"></p>
+		<p><input type="text" name="firstname" placeholder="请输入员工名字"></p>
+		<p><input type="text" name="lastname" placeholder="请输入员工姓氏"></p>
+		<p><input type="text" name="email" placeholder="请输入员工邮箱"></p>
+		<p><input type="text" name="phonenumber" placeholder="请输入员工联系方式"></p>
+		<p><input type="text" name="jobid" placeholder="请输入员职位"></p>
+		<p><input type="text" name="salary" placeholder="请输入员工工资"></p>
+		<p><input type="text" name="commissionpct" placeholder="请输入员工绩效"></p>
+		<p><input type="text" name="managerid" placeholder="请输入上级编号"></p>
+		<p><input type="text" name="departmentid" placeholder="请输入部门编号"></p>
+		<p><input type="submit" value="提交"></p>
 	</from>
 </body>
 </html>
