@@ -49,7 +49,8 @@ public class EmployeesAddController extends HttpServlet {
 		EmployeesService employeesService = new EmployeesServiceImp();
 		int code = employeesService.employeeAdd(e);
 		if(code == 0) {
-			
+			request.setAttribute("addtip", "添加失败");
+			request.getRequestDispatcher("employeesAdd.jsp").forward(request, response);
 		}else {
 			response.sendRedirect("/employeeSystem/employees/info.do");
 		}
