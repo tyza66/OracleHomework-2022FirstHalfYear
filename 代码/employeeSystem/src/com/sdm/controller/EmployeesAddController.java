@@ -41,6 +41,7 @@ public class EmployeesAddController extends HttpServlet {
 		String phoneNumber = request.getParameter("phonenumber");
 		String jobId = request.getParameter("jobid");
 		double salary = Double.parseDouble(request.getParameter("salary"));
+		//System.out.println(request.getParameter("commissionpct")+"1");
 		double commissionPct = Double.parseDouble(request.getParameter("commissionpct")==""?"0":request.getParameter("commissionpct"));
 		int managerId = Integer.parseInt(request.getParameter("managerid"));
 		int departmentId = Integer.parseInt(request.getParameter("departmentid"));
