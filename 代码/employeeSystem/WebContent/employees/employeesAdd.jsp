@@ -20,5 +20,13 @@
 		<p><input type="text" name="departmentid" placeholder="请输入部门编号"></p>
 		<p><input type="submit" value="提交"></p>
 	</form>
+	<%
+		String addtip = (String) request.getAttribute("addtip");
+		if (addtip != null) {
+	%>
+	<h6><%=addtip%></h6>
+	<%
+		}
+	%>
 </body>
 </html>
