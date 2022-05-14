@@ -41,7 +41,7 @@ public class EmployeesAddController extends HttpServlet {
 		String phoneNumber = request.getParameter("phonenumber");
 		String jobId = request.getParameter("jobid");
 		double salary = Double.parseDouble(request.getParameter("salary"));
-		double commissionPct = Double.parseDouble(request.getParameter("commissionpct")==null?"0":request.getParameter("commissionpct"));
+		double commissionPct = Double.parseDouble(request.getParameter("commissionpct")==""?"0":request.getParameter("commissionpct"));
 		int managerId = Integer.parseInt(request.getParameter("managerid"));
 		int departmentId = Integer.parseInt(request.getParameter("departmentid"));
 		Employees e = new Employees(employeeId,firstName,lastName,email,phoneNumber,null,jobId,salary,commissionPct,managerId,departmentId);
@@ -49,6 +49,8 @@ public class EmployeesAddController extends HttpServlet {
 		int code = employeesService.employeeAdd(e);
 		if(code == 0) {
 			
+		}else {
+			response.sendRedirect("/employeeSystem/employees/info.do");
 		}
 	}
 

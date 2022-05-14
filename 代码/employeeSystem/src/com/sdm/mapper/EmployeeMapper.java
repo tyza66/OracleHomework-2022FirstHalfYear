@@ -44,7 +44,7 @@ public class EmployeeMapper {
 	}
 
 	public int insert(Employees e) {
-		String sql = "insert into employees valses(?,?,?,?,?,sysdate,?,?,?,?,?)";
+		String sql = "insert into employees values(?,?,?,?,?,sysdate,?,?,?,?,?)";
 		Object[] params= {e.getEmployeeId(),e.getFirstName(),e.getLastName(),e.getEmail(),e.getPhoneNumber(),e.getJobId(),e.getSalary(),e.getCommissionPct(),e.getManagerId(),e.getDepartmentId()};
 		return baseDao.update(sql, params);
 	}

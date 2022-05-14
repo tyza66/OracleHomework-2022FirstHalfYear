@@ -7,7 +7,7 @@
 <title>员工添加页面</title>
 </head>
 <body>
-	<from action="/employeesSystem/employees/add.do"> 
+	<form action="/employeeSystem/employees/add.do"> 
 		<p><input type="text" name="employeeid" placeholder="请输入员工编号"></p>
 		<p><input type="text" name="firstname" placeholder="请输入员工名字"></p>
 		<p><input type="text" name="lastname" placeholder="请输入员工姓氏"></p>
@@ -19,6 +19,6 @@
 		<p><input type="text" name="managerid" placeholder="请输入上级编号"></p>
 		<p><input type="text" name="departmentid" placeholder="请输入部门编号"></p>
 		<p><input type="submit" value="提交"></p>
-	</from>
+	</form>
 </body>
 </html>
