@@ -11,6 +11,7 @@ import com.sdm.util.BaseDao;
 public class EmployeeMapper {
 	BaseDao baseDao = new BaseDao();
 
+	// 查询所有员工信息
 	public List<Employees> selectAll() {
 		List<Employees> list = new ArrayList<Employees>();
 		String sql = "Select * from Employees";
@@ -40,5 +41,11 @@ public class EmployeeMapper {
 			baseDao.closeAll();
 		}
 		return list;
+	}
+
+	public int insert(Employees e) {
+		String sql = "insert into employees valses(?,?,?,?,?,sysdate,?,?,?,?,?)";
+		Object[] params= {e.getEmployeeId(),e.getFirstName(),e.getLastName(),e.getEmail(),e.getPhoneNumber(),e.getJobId(),e.getSalary(),e.getCommissionPct(),e.getManagerId(),e.getDepartmentId()};
+		return baseDao.update(sql, params);
 	}
 }

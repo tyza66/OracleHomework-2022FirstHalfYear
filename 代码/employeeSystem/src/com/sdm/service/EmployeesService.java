@@ -6,5 +6,6 @@ import com.sdm.entity.Employees;
 
 public interface EmployeesService {
 	List<Employees> employeeInfo();
-	
+
+	int employeeAdd(Employees e);
 }

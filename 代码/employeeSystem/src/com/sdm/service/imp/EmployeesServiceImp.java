@@ -8,10 +8,17 @@ import com.sdm.service.EmployeesService;
 
 public class EmployeesServiceImp implements EmployeesService {
 
-		EmployeeMapper employeeMapper = new EmployeeMapper();
+	EmployeeMapper employeeMapper = new EmployeeMapper();
+
 	@Override
 	public List<Employees> employeeInfo() {
 		return employeeMapper.selectAll();
 	}
 
+	@Override
+	public int employeeAdd(Employees e) {
+		return employeeMapper.insert(e);
+	}
+	
+	
 }
