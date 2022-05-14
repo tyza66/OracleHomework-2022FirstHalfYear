@@ -12,6 +12,7 @@
 <a href="http://localhost:8080/employeeSystem/employees/employeesAdd.jsp" target="_blank">提交员工信息</a><br>
 <a href="http://localhost:8080/employeeSystem/employees/employeesUpdate.jsp" target="_blank">修改员工信息</a><br>
 <a href="http://url/" target="_blank">删除员工信息</a><br>
-<a href="http://url/" target="_blank">登陆测试</a><br>
+<a href="http://localhost:8080/employeeSystem/login.jsp" target="_blank">登陆测试</a><br>
+<a href="http://localhost:8080/employeeSystem/main.jsp" target="_blank">访问主页</a><br>
 </body>
 </html>
