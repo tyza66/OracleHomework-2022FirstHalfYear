@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>员工关系</title>
+<title>员工管理</title>
 </head>
 <body>
 <h3>你想干啥？</h3>
