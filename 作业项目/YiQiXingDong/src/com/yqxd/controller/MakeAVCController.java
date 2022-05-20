@@ -6,7 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,6 +39,8 @@ public class MakeAVCController extends HttpServlet {
         //画字母
         g.setColor(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
         String number = getNumbers(5);
+        HttpSession session = request.getSession();
+        session.setAttribute("vcode", number);
         g.setFont(new Font(null,Font.BOLD+Font.ITALIC,24));
         g.drawString(number,5,25);
         response.setContentType("image/jpeg");
