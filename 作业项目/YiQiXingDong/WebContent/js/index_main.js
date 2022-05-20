@@ -9,7 +9,6 @@ var app = new Vue({
     }
   },
   created: function () {
-
   },
   methods: {
     register(){
