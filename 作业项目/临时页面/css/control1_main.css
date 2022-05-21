@@ -10,10 +10,19 @@
 .main {
     width: 100%;
     height: 100vh;
+    display: flex;
+
 }
 
-.lefttab{
+.lefttab {
     margin-top: calc(50px - 1.5vh);
     width: 180px;
     height: 100vh;
+}
+
+.righttab {
+    flex: 1;
+    margin-top: calc(50px - 1.5vh);
+    width: 100%;
+    padding: 10px;
 }

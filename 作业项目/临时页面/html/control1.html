@@ -22,7 +22,7 @@
             </div>
         </div>
         <el-main class="main">
-            <el-menu default-active="1" class="el-menu-vertical-demo lefttab" @open="handleOpen" @close="handleClose">
+            <el-menu default-active="1" class="el-menu-vertical-demo lefttab">
                 <el-menu-item index="1">
                     <i class="el-icon-setting"></i>
                     <span slot="title">人员管理</span>
@@ -60,6 +60,31 @@
                     <span slot="title">外卖平台接入管理</span>
                 </el-menu-item>
             </el-menu>
+
+            <div class="righttab">
+                <div style="margin:10px 0;">
+                    <el-button type="primary">新增</el-button>
+                    <el-input clearable v-model="search" placeholder="请输入内容" style="width:20%;margin-left:10px;">
+                    </el-input>
+                    <el-button type="primary" style="margin-left:10px;">查询</el-button>
+                </div>
+                <el-table stripe :data="tableData" border style="width: 100%">
+                    <el-table-column prop="id" label="ID" width="180">
+                    </el-table-column>
+                    <el-table-column prop="user" label="账号" width="180">
+                    </el-table-column>
+                    <el-table-column prop="nickname" label="昵称">
+                    </el-table-column>
+                    <el-table-column prop="member" label="身份">
+                    </el-table-column>
+                    <el-table-column fixed="right" label="操作" width="100">
+                        <template slot-scope="scope">
+                            <el-button @click="handleClick(scope.row)" type="text" size="small">编辑</el-button>
+                            <el-button type="text" size="small">删除</el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </div>
         </el-main>
     </div>
     <script src="../js/vue.js"></script>
