@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/elementui.css">
+    <link rel="stylesheet" href="../css/layer.css">
+    <link rel="stylesheet" href="../css/control1_main.css">
+    <title>管理界面</title>
+</head>
+
+<body>
+    <div id="app">
+        <div
+            style="height:50px;width:100%;line-height:50px;border-bottom:1px solid #ccc;display:flex;overflow: hidden;position: fixed;z-index: 100;background-color: white;">
+            <div style="width:200px;margin-left:30px;font-weight:bold;color:#559EFF;">疫起行动</div>
+            <div style="flex:1;"></div>
+            <div style="width:100px;margin-right:25px;">
+                <p>未登录</p>
+            </div>
+        </div>
+        <el-main class="main">
+            <el-menu default-active="1" class="el-menu-vertical-demo lefttab" @open="handleOpen" @close="handleClose">
+                <el-menu-item index="1">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">人员管理</span>
+                </el-menu-item>
+                <el-menu-item index="2">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">抢菜管理</span>
+                </el-menu-item>
+                <el-menu-item index="3">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">活动管理</span>
+                </el-menu-item>
+                <el-menu-item index="4">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">页游管理</span>
+                </el-menu-item>
+                <el-menu-item index="5">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">隔离管理</span>
+                </el-menu-item>
+                <el-menu-item index="6">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">交友匹配管理</span>
+                </el-menu-item>
+                <el-menu-item index="7">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">讨论区管理</span>
+                </el-menu-item>
+                <el-menu-item index="8">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">医疗咨询管理</span>
+                </el-menu-item>
+                <el-menu-item index="9">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">外卖平台接入管理</span>
+                </el-menu-item>
+            </el-menu>
+        </el-main>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/elementui.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/layer.js"></script>
+    <script src="../js/control1_main.js"></script>
+</body>
+
+</html>
