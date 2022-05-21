@@ -3,9 +3,13 @@ var app = new Vue({
   data: {
     search: '',
     tableData: [{
-      id: '1',
-      user: 'tyza66',
-      nickname: '洮羱芝闇',
+      id: '111111111111',
+      phone: '15909808533',
+      name: '孙达明',
+      age: 21,
+      sex: '男',
+      way: '渤海大学滨海校区',
+      hs: '阴性',
       member: '管理员'
     }]
   },
@@ -13,6 +17,8 @@ var app = new Vue({
 
   },
   methods: {
-
+    gopage(n){
+      window.location.href = './control'+n+'.html'
+    }
   }
 });
