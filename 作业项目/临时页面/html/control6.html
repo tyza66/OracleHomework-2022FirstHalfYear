@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/elementui.css">
+    <link rel="stylesheet" href="../css/layer.css">
+    <link rel="stylesheet" href="../css/control1_main.css">
+    <title>管理界面</title>
+</head>
+
+<body>
+    <div id="app">
+        <div
+            style="height:50px;width:100%;line-height:50px;border-bottom:1px solid #ccc;display:flex;overflow: hidden;position: fixed;z-index: 100;background-color: white;">
+            <div style="width:200px;margin-left:30px;font-weight:bold;color:#559EFF;">疫起行动</div>
+            <div style="flex:1;"></div>
+            <div style="width:100px;margin-right:25px;">
+                <p>未登录</p>
+            </div>
+        </div>
+        <el-main class="main">
+            <el-menu default-active="6" class="el-menu-vertical-demo lefttab">
+                <el-menu-item index="1" @click="gopage(1)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">人员管理</span>
+                </el-menu-item>
+                <el-menu-item index="2" @click="gopage(2)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">抢菜管理</span>
+                </el-menu-item>
+                <el-menu-item index="3" @click="gopage(3)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">活动管理</span>
+                </el-menu-item>
+                <el-menu-item index="4" @click="gopage(4)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">页游管理</span>
+                </el-menu-item>
+                <el-menu-item index="5" @click="gopage(5)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">隔离管理</span>
+                </el-menu-item>
+                <el-menu-item index="6" @click="gopage(6)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">交友匹配管理</span>
+                </el-menu-item>
+                <el-menu-item index="7" @click="gopage(7)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">讨论区管理</span>
+                </el-menu-item>
+                <el-menu-item index="8" @click="gopage(8)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">医疗咨询管理</span>
+                </el-menu-item>
+                <el-menu-item index="9" @click="gopage(9)">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">外卖平台接入管理</span>
+                </el-menu-item>
+            </el-menu>
+
+            <div class="righttab">
+                <div style="margin:10px 0;">
+                    <el-button type="primary">新增</el-button>
+                    <el-input clearable v-model="search" placeholder="请输入内容" style="width:20%;margin-left:10px;">
+                    </el-input>
+                    <el-button type="primary" style="margin-left:10px;">查询</el-button>
+                </div>
+                <el-table stripe :data="tableData" border style="width: 100%">
+                    <el-table-column prop="id" label="身份证号" width="180">
+                    </el-table-column>
+                    <el-table-column prop="phone" label="手机号">
+                    </el-table-column>
+                    <el-table-column prop="name" label="姓名">
+                    </el-table-column>
+                    <el-table-column prop="age" label="年龄">
+                    </el-table-column>
+                    <el-table-column prop="sex" label="性别">
+                    </el-table-column>
+                    <el-table-column prop="way" label="行动轨迹">
+                    </el-table-column>
+                    <el-table-column prop="hs" label="核酸结果">
+                    </el-table-column>
+                    <el-table-column prop="member" label="身份">
+                    </el-table-column>
+                    <el-table-column fixed="right" label="操作" width="100">
+                        <template slot-scope="scope">
+                            <el-button @click="handleClick(scope.row)" type="text" size="small">编辑</el-button>
+                            <el-button type="text" size="small">删除</el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </div>
+        </el-main>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script src="../js/elementui.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/layer.js"></script>
+    <script src="../js/control1_main.js"></script>
+</body>
+
+</html>
