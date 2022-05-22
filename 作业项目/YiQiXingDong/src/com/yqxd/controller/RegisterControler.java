@@ -58,7 +58,7 @@ public class RegisterControler extends HttpServlet {
 				request.setAttribute("failtip", "验证码错误");
 				request.getRequestDispatcher("register.jsp").forward(request, response);
 			}
-			QuarantineAdmin q = new QuarantineAdmin((Integer) null,name,sex,phone,null,null,password,ks);
+			QuarantineAdmin q = new QuarantineAdmin(66,name,sex,phone,null,null,password,ks);
 			QuarantineAdminService quarantineAdminService = new QuarantineAdminServiceImp();
 			if(quarantineAdminService.register(q)==1) {
 				request.setAttribute("successtip", "注册成功！请返回登录页面进行登录！");
