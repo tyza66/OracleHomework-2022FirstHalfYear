@@ -21,10 +21,7 @@ public class QuarantineAdminServiceImp implements QuarantineAdminService {
 		}
 	}
 	@Override
-	public int register(String name, String pwd) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int register(QuarantineAdmin q) {
+		return qam.insert(q);
 	}
-
-
 }

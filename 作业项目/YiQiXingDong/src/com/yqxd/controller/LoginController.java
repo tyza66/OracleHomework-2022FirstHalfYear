@@ -38,13 +38,13 @@ public class LoginController extends HttpServlet {
 		String way = request.getParameter("way");
 		String userName = request.getParameter("username");
 		String passWord = request.getParameter("password");
-		QuarantineAdminService employeesService = new QuarantineAdminServiceImp();
+		QuarantineAdminService quarantineAdminService = new QuarantineAdminServiceImp();
 		if(way.equals("1")) {
 			request.setAttribute("failtip", "功能仍在开发");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		if(way.equals("2")) {
-			int code = employeesService.login(userName, passWord);
+			int code = quarantineAdminService.login(userName, passWord);
 			switch (code) {
 			case 404:
 				request.setAttribute("failtip", "该账号不存在，请重新登录");
