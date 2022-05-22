@@ -42,7 +42,7 @@
 				<el-input type="password" clearable class="input"
 					v-model="userLogin.password"></el-input> </el-form-item> </el-form>
 				<center>
-					<el-button type="primary">登录</el-button>
+					<el-button type="primary" @click="login()">登录</el-button>
 					<el-button type="primary" @click="register()">注册</el-button>
 				</center>
 			</div>

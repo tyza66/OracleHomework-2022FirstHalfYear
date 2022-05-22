@@ -26,7 +26,7 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String way = request.getParameter("username");
+		String way = request.getParameter("way");
 		String userName =  request.getParameter("username");
 		String passWord =  request.getParameter("username");
 		

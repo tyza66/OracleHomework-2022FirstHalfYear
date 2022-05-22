@@ -13,6 +13,8 @@ var app = new Vue({
 
   },
   methods: {
-
+	  backlogin(){
+		  window.location.href =  './index.jsp'
+	  }
   }
 });

@@ -13,7 +13,10 @@ var app = new Vue({
   },
   methods: {
     register(){
-      window.location.href =  './register.html'
+      window.location.href =  './register.jsp'
+    },
+    login(){
+    	window.location.href =  './login?way='
     }
   }
 });
