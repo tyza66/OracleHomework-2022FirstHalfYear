@@ -4,9 +4,11 @@ var app = new Vue({
     labelPosition: 'right',
     userLogin: {
       user: '1',
-      id: '',
-      password: '',
-      yanzheng:''
+      name: '',
+      sex: '',
+      phone:'',
+      ks:'',
+      password:''
     }
   },
   created: function () {

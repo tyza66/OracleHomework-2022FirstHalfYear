@@ -35,8 +35,18 @@
 								<el-radio v-model="userLogin.user" label="1">用户注册</el-radio>
 								<el-radio v-model="userLogin.user" label="2">管理员注册</el-radio>
 							</center>
-							<el-form-item label="账号">
-								<el-input class="input" v-model="userLogin.id"></el-input>
+							<el-form-item label="姓名">
+								<el-input class="input" v-model="userLogin.name"></el-input>
+							</el-form-item>
+							<el-form-item label="性别">
+								<el-radio v-model="userLogin.sex" label="1">男</el-radio>
+								<el-radio v-model="userLogin.sex" label="0">女</el-radio>
+							</el-form-item>
+							<el-form-item label="联系电话">
+								<el-input class="input" v-model="userLogin.phone"></el-input>
+							</el-form-item>
+							<el-form-item label="科室号">
+								<el-input class="input" v-model="userLogin.ks"></el-input>
 							</el-form-item>
 							<el-form-item label="密码">
 								<el-input type="password" clearable class="input" v-model="userLogin.password">
