@@ -6,14 +6,13 @@ var app = new Vue({
       user: '1',
       id: '',
       password: '',
-      yanzheng: ''
+      yanzheng:''
     }
   },
   created: function () {
+
   },
   methods: {
-    backlogin() {
-      window.location.href = './index.jsp'
-    }
+
   }
 });

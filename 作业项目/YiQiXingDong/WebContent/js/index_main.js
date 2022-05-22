@@ -9,10 +9,11 @@ var app = new Vue({
     }
   },
   created: function () {
+
   },
   methods: {
     register(){
-      window.location.href =  './register.jsp'
+      window.location.href =  './register.html'
     }
   }
 });
