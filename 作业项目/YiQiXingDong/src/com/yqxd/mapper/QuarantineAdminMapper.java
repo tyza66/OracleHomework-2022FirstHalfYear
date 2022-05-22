@@ -51,18 +51,18 @@ public class QuarantineAdminMapper {
 				a.getAdmin_workCondition(), a.getAdmin_password(), a.getDepartment_id(), a.getAdmin_id() };
 		return bd.update(sql, params);
 	}
-	
+
 	public int deleteById(int id) {
 		String sql = "delete from quarantine_admin where admin_id = ?";
 		Object[] params = { id };
 		return bd.update(sql, params);
 	}
-	
+
 	public QuarantineAdmin selectById(int id) {
 		String sql = "Select * from quarantine_admin where admin_id = ?";
 		Object[] params = { id };
 		ResultSet rs = bd.query(sql, params);
-		QuarantineAdmin quarantineAdmin = null; 
+		QuarantineAdmin quarantineAdmin = null;
 		try {
 			while (rs.next()) {
 				int admin_id = rs.getInt(1);
@@ -85,12 +85,13 @@ public class QuarantineAdminMapper {
 		}
 		return quarantineAdmin;
 	}
-	
+
 	public QuarantineAdmin selectByName(String name) {
 		String sql = "Select * from quarantine_admin where admin_name = ?";
 		Object[] params = { name };
 		ResultSet rs = bd.query(sql, params);
-		QuarantineAdmin quarantineAdmin = null; 
+		QuarantineAdmin quarantineAdmin = null;
+
 		try {
 			while (rs.next()) {
 				int admin_id = rs.getInt(1);

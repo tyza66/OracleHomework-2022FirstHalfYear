@@ -29,6 +29,16 @@
 		<div class="login">
 			<center>
 				<h2>登录</h2>
+				<center>
+					<%
+						String failtip = (String) request.getAttribute("failtip");
+						if (failtip != null) {
+					%>
+					<h6 style="color: red;"><%=failtip%></h6>
+					<%
+						}
+					%>
+				</center>
 			</center>
 			<div class="user">
 				<el-form :label-position="labelPosition" label-width="80px"

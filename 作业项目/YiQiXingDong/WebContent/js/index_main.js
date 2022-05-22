@@ -16,7 +16,7 @@ var app = new Vue({
       window.location.href =  './register.jsp'
     },
     login(){
-    	window.location.href =  './login?way='
+    	window.location.href =  './login?way=' + this.userLogin.user + "&username=" + this.userLogin.id + "&password=" + this.userLogin.password;
     }
   }
 });
