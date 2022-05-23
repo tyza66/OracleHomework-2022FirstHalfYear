@@ -5,7 +5,7 @@ increment by 1
 start with 1;
 --select ID_quarantine_admin.nextval from dual;
 --¿ÆÊÒid×ÔÔö
-CREATE SEQUENCE ID_quarantine_admin
+CREATE SEQUENCE ID_quarantine_department
 increment by 1
 start with 1;
 --select ID_quarantine_admin.nextval from dual;
