@@ -13,6 +13,12 @@
 <title>管理界面</title>
 </head>
 <body>
+<%
+HttpSession s1 = request.getSession();
+if(s1.getAttribute("loginName")==null||(String)s1.getAttribute("loginName")==""){
+	response.sendRedirect("../index.jsp");
+}
+%>
 	<div id="app">
 		<div
 			style="height: 50px; width: 100%; line-height: 50px; border-bottom: 1px solid #ccc; display: flex; overflow: hidden; position: fixed; z-index: 100; background-color: white;">
