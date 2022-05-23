@@ -7,8 +7,8 @@ import com.yqxd.service.QuarantineAdminService;
 public class QuarantineAdminServiceImp implements QuarantineAdminService {
 	QuarantineAdminMapper qam = new QuarantineAdminMapper();
 	@Override
-	public int login(String name, String pwd) {
-		QuarantineAdmin quarantineAdmin = qam.selectByName(name);
+	public int login(String phone, String pwd) {
+		QuarantineAdmin quarantineAdmin = qam.selectByPhone(phone);
 		if (quarantineAdmin == null) {
 			// 若结果为空则该用户不存在返回404
 			return 404;
