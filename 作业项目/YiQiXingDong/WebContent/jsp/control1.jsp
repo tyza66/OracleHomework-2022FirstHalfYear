@@ -14,8 +14,8 @@
 	</head>
 
 	<body>
-		<% HttpSession s1=request.getSession();
-			if(s1.getAttribute("loginName")==null||(String)s1.getAttribute("loginName")=="" ){
+		<% 
+			if(session.getAttribute("loginName")==null||(String)session.getAttribute("loginName")=="" ){
 			response.sendRedirect("../index.jsp"); } %>
 			<div id="app">
 				<div

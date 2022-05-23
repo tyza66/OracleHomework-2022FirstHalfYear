@@ -14,8 +14,8 @@
 	</head>
 
 	<body>
-		<% HttpSession s1=request.getSession();
-			if(s1.getAttribute("loginName")==null||(String)s1.getAttribute("loginName")=="" ){
+		<% 
+			if(session.getAttribute("loginName")==null||(String)session.getAttribute("loginName")=="" ){
 			response.sendRedirect("../index.jsp"); } %>
 			<div id="app">
 				<div
@@ -89,7 +89,7 @@
 						formLabelAlign.type = '';
 						formLabelAlign.number = '';
 						formLabelAlign.place = '';">取 消</el-button>
-						<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+						<el-button type="primary" @click="insert()">确 定</el-button>
 					</span>
 				</el-dialog>
 			</div>
@@ -98,6 +98,9 @@
 			<script src="../js/jquery-3.6.0.min.js"></script>
 			<script src="../js/layer.js"></script>
 			<script src="../js/control2_main.js"></script>
+			<script>
+				app.putVegatable(1,"鸡蛋",999,"寝室8号楼下")
+			</script>
 	</body>
 
 	</html>

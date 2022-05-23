@@ -2,12 +2,7 @@ var app = new Vue({
   el: "#app",
   data: {
     search: '',
-    tableData: [{
-      id: '',
-      type: '',
-      number: '',
-      place: ''
-    }],
+    tableData: [],
     dialogVisible: false,
     labelPosition: 'right',
     formLabelAlign: {
@@ -34,6 +29,18 @@ var app = new Vue({
           done();
         })
         .catch(_ => { });
+    },
+    putVegatable(id,type,number,place){
+      var one = {
+        id: id,
+        type: type,
+        number: number,
+        place: place
+      }
+      this.tableData.push(one);
+    },
+    insert(){
+      window.location.href = '../'
     }
   }
 });
