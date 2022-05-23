@@ -1,11 +1,17 @@
 package com.yqxd.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.yqxd.entity.Vegetables;
+import com.yqxd.service.VegetablesService;
+import com.yqxd.service.imp.VegetablesServiceImp;
 
 /**
  * Servlet implementation class VegetablesController
@@ -29,7 +35,13 @@ public class VegetablesController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		
+		String how = request.getParameter("t");
+		VegetablesService v = new VegetablesServiceImp();
+		if(how.equals("1")) {
+			List<Vegetables> vsList = v.getAllVegetable();
+			request.setAttribute("elist",vsList);
+			request.getRequestDispatcher("jsp/control2.jsp").forward(request, response);
+		}
 	}
 
 	/**
