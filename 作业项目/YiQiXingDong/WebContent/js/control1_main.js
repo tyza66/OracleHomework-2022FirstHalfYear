@@ -18,7 +18,7 @@ var app = new Vue({
   },
   methods: {
     gopage(n){
-      window.location.href = './control'+n+'.html'
+      window.location.href = './control'+n+'.jsp'
     }
   }
 });
