@@ -35,11 +35,12 @@ public class VegetablesController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
+		//how是用来判断请求的意图，就是我想每个实体，只用以一个sevlet实现全部功能
 		String how = request.getParameter("t");
 		VegetablesService v = new VegetablesServiceImp();
 		if(how.equals("1")) {
 			List<Vegetables> vsList = v.getAllVegetable();
-			request.setAttribute("elist",vsList);
+			request.setAttribute("vlist",vsList);
 			request.getRequestDispatcher("jsp/control2.jsp").forward(request, response);
 		}
 	}
