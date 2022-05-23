@@ -39,7 +39,7 @@ public class RegisterControler extends HttpServlet {
 		String name = request.getParameter("name");
 		String sex = request.getParameter("sex");
 		String phone = request.getParameter("phone");
-		int ks = request.getParameter("ks")==null?0:Integer.parseInt(request.getParameter("ks"));
+		int ks = ((request.getParameter("ks")=="")||(!request.getParameter("ks").matches("^[0-9]*$")))?0:Integer.parseInt(request.getParameter("ks"));
 		String password = request.getParameter("password");
 		String vcode = request.getParameter("vcode");
 		QuarantineAdminService employeesService = new QuarantineAdminServiceImp();
