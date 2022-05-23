@@ -24,4 +24,8 @@ public class QuarantineAdminServiceImp implements QuarantineAdminService {
 	public int register(QuarantineAdmin q) {
 		return qam.insert(q);
 	}
+	@Override
+	public String getUsername(String phone) {
+		return qam.getUsernameByPhone(phone);
+	}
 }

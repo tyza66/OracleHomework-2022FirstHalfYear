@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.yqxd.service.QuarantineAdminService;
 import com.yqxd.service.imp.QuarantineAdminServiceImp;
@@ -39,11 +40,11 @@ public class LoginController extends HttpServlet {
 		String userName = request.getParameter("username");
 		String passWord = request.getParameter("password");
 		QuarantineAdminService quarantineAdminService = new QuarantineAdminServiceImp();
-		if(way.equals("1")) {
+		if (way.equals("1")) {
 			request.setAttribute("failtip", "功能仍在开发");
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
-		if(way.equals("2")) {
+		if (way.equals("2")) {
 			int code = quarantineAdminService.login(userName, passWord);
 			switch (code) {
 			case 404:
@@ -55,6 +56,9 @@ public class LoginController extends HttpServlet {
 				request.getRequestDispatcher("index.jsp").forward(request, response);
 				break;
 			case 200:
+				String name = quarantineAdminService.getUsername(userName);
+				HttpSession session = request.getSession();
+				session.setAttribute("loginName", name);
 				response.sendRedirect("/YiQiXingDong/jsp/control1.jsp");
 				break;
 			}

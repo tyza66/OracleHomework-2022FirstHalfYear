@@ -142,4 +142,23 @@ public class QuarantineAdminMapper {
 		}
 		return quarantineAdmin;
 	}
+	public String getUsernameByPhone(String phone) {
+		String sql = "Select * from quarantine_admin where ADMIN_NUMBER = ?";
+		Object[] params = { phone };
+		ResultSet rs = bd.query(sql, params);
+		String name = "";
+		try {
+			while (rs.next()) {
+				String admin_name = rs.getString(2);
+				name = admin_name;
+			}
+			rs.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			bd.closeAll();
+		}
+		return name;
+	}
 }

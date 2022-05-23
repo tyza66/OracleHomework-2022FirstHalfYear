@@ -20,7 +20,7 @@
 				style="width: 200px; margin-left: 30px; font-weight: bold; color: #559EFF;">疫起行动</div>
 			<div style="flex: 1;"></div>
 			<div style="width: 100px; margin-right: 25px;">
-				<p>未登录</p>
+				<p>${sessionScope.loginName}</p>
 			</div>
 		</div>
 		<el-main class="main"> <el-menu default-active="1"
