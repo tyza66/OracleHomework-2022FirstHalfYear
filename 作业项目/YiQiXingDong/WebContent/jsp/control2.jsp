@@ -50,7 +50,7 @@
 
 					<div class="righttab">
 						<div style="margin: 10px 0;">
-							<el-button type="primary">新增</el-button>
+							<el-button type="primary" @click="dialogVisible = true">新增</el-button>
 							<el-input clearable v-model="search" placeholder="请输入内容"
 								style="width:20%;margin-left:10px;"> </el-input>
 							<el-button type="primary" style="margin-left:10px;">查询</el-button>
@@ -68,6 +68,26 @@
 						</el-table>
 					</div>
 				</el-main>
+				<el-dialog title="新增菜品" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+					<el-form :label-position="labelPosition" label-width="80px" :model="formLabelAlign">
+						<el-form-item label="蔬菜ID">
+							<el-input v-model="formLabelAlign.id"></el-input>
+						</el-form-item>
+						<el-form-item label="蔬菜种类">
+							<el-input v-model="formLabelAlign.type"></el-input>
+						</el-form-item>
+						<el-form-item label="剩余量">
+							<el-input v-model="formLabelAlign.number"></el-input>
+						</el-form-item>
+						<el-form-item label="放置地点">
+							<el-input v-model="formLabelAlign.place"></el-input>
+						</el-form-item>
+					</el-form>
+					<span slot="footer" class="dialog-footer">
+						<el-button @click="dialogVisible = false">取 消</el-button>
+						<el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+					</span>
+				</el-dialog>
 			</div>
 			<script src="../js/vue.js"></script>
 			<script src="../js/elementui.js"></script>
