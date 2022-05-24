@@ -68,6 +68,12 @@
 				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
 				消除年龄限制：<el-switch v-model="value7" active-color="#13ce66"
 				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				关键字匹配：<el-switch v-model="value8" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				允许用户在大厅自由挑选：<el-switch v-model="value9" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				允许用户访问其他人信息：<el-switch v-model="value10" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
 		</div>
 		</el-main>
 	</div>
