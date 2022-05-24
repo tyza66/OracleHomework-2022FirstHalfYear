@@ -74,6 +74,7 @@
 				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
 				允许用户访问其他人信息：<el-switch v-model="value10" active-color="#13ce66"
 				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				
 		</div>
 		</el-main>
 	</div>
@@ -107,6 +108,10 @@
 		});
 	<%}
 			}%>
+	
+	<% 
+	
+	%>
 		
 	</script>
 </body>
