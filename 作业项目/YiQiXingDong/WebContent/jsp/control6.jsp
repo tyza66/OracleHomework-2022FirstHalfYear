@@ -53,28 +53,39 @@
 			class="el-icon-setting"></i> <span slot="title">外卖平台接入管理</span> </el-menu-item> </el-menu>
 
 		<div class="righttab">
-			<h2 style="margin-bottom:10px;">交友匹配规则管理</h2>
-				男女混合匹配：<el-switch v-model="value1" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				异性匹配：<el-switch v-model="value2" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				爱好相似度匹配：<el-switch v-model="value3" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				年龄相差10以上可匹配：<el-switch v-model="value4" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				年龄相差20以上可匹配：<el-switch v-model="value5" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				年龄相差30以上可匹配：<el-switch v-model="value6" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				消除年龄限制：<el-switch v-model="value7" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				关键字匹配：<el-switch v-model="value8" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				允许用户在大厅自由挑选：<el-switch v-model="value9" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				允许用户访问其他人信息：<el-switch v-model="value10" active-color="#13ce66"
-				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
-				
+			<h2 style="margin-bottom: 10px;">交友匹配规则管理</h2>
+			男女混合匹配：
+			<el-switch v-model="value1" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 异性匹配：
+			<el-switch v-model="value2" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 爱好相似度匹配：
+			<el-switch v-model="value3" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 年龄相差10以上可匹配：
+			<el-switch v-model="value4" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 年龄相差20以上可匹配：
+			<el-switch v-model="value5" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 年龄相差30以上可匹配：
+			<el-switch v-model="value6" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 消除年龄限制：
+			<el-switch v-model="value7" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 关键字匹配：
+			<el-switch v-model="value8" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 允许用户在大厅自由挑选：
+			<el-switch v-model="value9" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br /> 允许用户访问其他人信息：
+			<el-switch v-model="value10" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch>
+			<br />
+			<el-button type="primary" @click="commit()">提交修改</el-button>
 		</div>
 		</el-main>
 	</div>
@@ -108,11 +119,47 @@
 		});
 	<%}
 			}%>
-	
-	<% 
-	
-	%>
 		
+	<%
+	Friends friend = null;
+	if (request.getAttribute("friendshow") == null) {
+				request.getRequestDispatcher("../FriendsController?t=1").forward(request, response);
+			} else {
+				friend = (Friends) request.getAttribute("friendshow");
+			}
+	if(friend!=null){
+	%>
+	if(<%=friend.getZ1()%>==2){
+		app.value1 = true;	
+	}
+	if(<%=friend.getZ2()%>==2){
+		app.value2 = true;	
+	}
+	if(<%=friend.getZ3()%>==2){
+		app.value3 = true;	
+	}
+	if(<%=friend.getZ4()%>==2){
+		app.value4 = true;	
+	}
+	if(<%=friend.getZ5()%>==2){
+		app.value5 = true;	
+	}
+	if(<%=friend.getZ6()%>==2){
+		app.value6 = true;	
+	}
+	if(<%=friend.getZ7()%>==2){
+		app.value7 = true;	
+	}
+	if(<%=friend.getZ8()%>==2){
+		app.value8 = true;	
+	}
+	if(<%=friend.getZ9()%>==2){
+		app.value9 = true;	
+	}
+	if(<%=friend.getZ10()%>==2){
+		app.value10 = true;	
+	}
+	<%}%>
 	</script>
 </body>
 
