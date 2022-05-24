@@ -6,30 +6,30 @@ import com.yqxd.entity.MessageInfo;
 import com.yqxd.mapper.MessageMapper;
 import com.yqxd.service.MessageInfoService;
 
-public class MessageInfoServiceImp  implements MessageInfoService{
-	MessageMapper me=new MessageMapper();
+public class MessageInfoServiceImp implements MessageInfoService {
+	MessageMapper me = new MessageMapper();
 
 	@Override
 	public List<MessageInfo> getAllMessage() {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return me.selectAll();
 	}
 
 	@Override
 	public int addMessage(MessageInfo v) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return me.addToMessage(v);
 	}
 
 	@Override
 	public int deleteMessage(int id) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return me.deleteMessageById(id);
 	}
 
 	@Override
 	public int updateMessage(MessageInfo v) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return me.updateById(v);
 	}
 }
