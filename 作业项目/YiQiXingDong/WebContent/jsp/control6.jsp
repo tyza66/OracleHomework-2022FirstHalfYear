@@ -53,11 +53,21 @@
 			class="el-icon-setting"></i> <span slot="title">外卖平台接入管理</span> </el-menu-item> </el-menu>
 
 		<div class="righttab">
-			<el-switch v-model="value1" active-text="按月付费" inactive-text="按年付费">
-			</el-switch>
-			<el-switch style="display: block" v-model="value2"
-				active-color="#13ce66" inactive-color="#ff4949" active-text="按月付费"
-				inactive-text="按年付费"> </el-switch>
+			<h2 style="margin-bottom:10px;">交友匹配规则管理</h2>
+				男女混合匹配：<el-switch v-model="value1" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				异性匹配：<el-switch v-model="value2" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				爱好相似度匹配：<el-switch v-model="value3" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				年龄相差10以上可匹配：<el-switch v-model="value4" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				年龄相差20以上可匹配：<el-switch v-model="value5" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				年龄相差30以上可匹配：<el-switch v-model="value6" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
+				消除年龄限制：<el-switch v-model="value7" active-color="#13ce66"
+				inactive-color="#ff4949" style="margin:10px;"> </el-switch><br/>
 		</div>
 		</el-main>
 	</div>
