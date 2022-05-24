@@ -57,7 +57,8 @@
 				<el-button type="primary" @click="dialogVisible = true">新增</el-button>
 				<el-input clearable v-model="search" placeholder="请输入内容"
 					style="width:20%;margin-left:10px;"> </el-input>
-				<el-button type="primary" style="margin-left:10px;">查询</el-button>
+				<el-button type="primary" style="margin-left:10px;" @click="search1()">查询</el-button>
+				<el-button type="primary" style="margin-left:10px;" @click="reload()">取消查询</el-button>
 			</div>
 			<el-table stripe :data="tableData" border style="width: 100%">
 			<el-table-column prop="id" label="蔬菜ID" width="180">
@@ -91,7 +92,7 @@
 						formLabelAlign.place = '';">取
 			消</el-button> <el-button type="primary" @click="insert()">确 定</el-button>
 		</span> </el-dialog>
-		
+
 		<el-dialog title="编辑菜品" :visible.sync="dialogVisible2" width="30%"
 			:before-close="handleClose2"> <el-form
 			:label-position="labelPosition2" label-width="80px"

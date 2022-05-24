@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     search: '',
     tableData: [],
+    tempDate:[],
     dialogVisible: false,
     labelPosition: 'right',
     formLabelAlign: {
@@ -21,7 +22,7 @@ var app = new Vue({
     }
   },
   created: function () {
-
+    this.tempDate = this.tableData;
   },
   methods: {
     gopage(n) {
@@ -75,6 +76,21 @@ var app = new Vue({
     },
     update(){
       window.location.href = '../vegetable?t=4&id=' + this.formLabelAlign2.id + '&kind=' + this.formLabelAlign2.type + '&number=' + this.formLabelAlign2.number + "&place=" + this.formLabelAlign2.place;
+    },
+    search1(){
+      var temp = [];
+      this.tableData = this.tempDate;
+      for(var i = 0;i<this.tableData.length;i++){
+        if(this.tableData[i].type.search(this.search)!=-1){
+          temp.push(this.tableData[i]);
+        }
+      }
+      this.tempDate = this.tableData;
+      this.tableData = temp;
+      this.search = "";
+    },
+    reload(){
+      this.tableData = this.tempDate;
     }
   }
 });
