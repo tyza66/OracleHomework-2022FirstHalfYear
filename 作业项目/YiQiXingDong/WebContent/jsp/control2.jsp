@@ -18,6 +18,7 @@
 	<%
 		if (session.getAttribute("loginName") == null || (String) session.getAttribute("loginName") == "") {
 			response.sendRedirect("../index.jsp");
+			return ;
 		}
 	%>
 	<div id="app">
@@ -66,7 +67,11 @@
 				fixed="right" label="操作" width="100"> <template
 				slot-scope="scope"> <el-button
 				@click="handleClick(scope.row)" type="text" size="small">编辑</el-button>
-			<el-button type="text" size="small">删除</el-button> </template> </el-table-column> </el-table>
+			<el-popconfirm title="你确定要删除吗?" @confirm="delete1(scope.row.id)">
+            <template #reference>
+              <el-button type="text" size="small">删除</el-button>
+            </template>
+          </el-popconfirm> </template> </el-table-column> </el-table>
 		</div>
 		</el-main>
 		<el-dialog title="新增菜品" :visible.sync="dialogVisible" width="30%"
@@ -86,6 +91,23 @@
 						formLabelAlign.place = '';">取
 			消</el-button> <el-button type="primary" @click="insert()">确 定</el-button>
 		</span> </el-dialog>
+		
+		<el-dialog title="编辑菜品" :visible.sync="dialogVisible2" width="30%"
+			:before-close="handleClose2"> <el-form
+			:label-position="labelPosition2" label-width="80px"
+			:model="formLabelAlign2"> </el-input> </el-form-item> <el-form-item
+			label="蔬菜种类"> <el-input v-model="formLabelAlign2.type"></el-input>
+		</el-form-item> <el-form-item label="剩余量"> <el-input
+			v-model="formLabelAlign2.number"></el-input> </el-form-item> <el-form-item
+			label="放置地点"> <el-input v-model="formLabelAlign2.place"></el-input>
+		</el-form-item> </el-form> <span slot="footer" class="dialog-footer"> <el-button
+				@click="dialogVisible2 = false;
+						formLabelAlign2.id = '';
+						formLabelAlign2.type = '';
+						formLabelAlign2.number = '';
+						formLabelAlign2.place = '';">取
+			消</el-button> <el-button type="primary" @click="update()">确 定</el-button>
+		</span> </el-dialog>
 	</div>
 	<script src="../js/vue.js"></script>
 	<script src="../js/elementui.js"></script>
@@ -94,7 +116,38 @@
 	<script src="../js/control2_main.js"></script>
 	<script>
 		
-	<%if (request.getAttribute("vlist") == null) {
+	<%		if(session.getAttribute("addstatus") == null||(String)session.getAttribute("addstatus") == ""){
+			}else{
+				if((String)session.getAttribute("addstatus") == "ok"){
+					%>
+					app.$message({
+				          message: '添加成功！',
+				          type: 'success'
+				        });
+					<%
+					//session.setAttribute("addstatus","");
+				}else if((String)session.getAttribute("addstatus") == "no"){
+					%>
+					app.$message.error('操作失败');
+					<%
+					//session.setAttribute("addstatus","");
+				}else if((String)session.getAttribute("addstatus") == "dl"){
+					%>
+					app.$message({
+				          message: '删除成功！',
+				          type: 'success'
+				        });
+					<%
+				}else if((String)session.getAttribute("addstatus") == "up"){
+					%>
+					app.$message({
+				          message: '编辑成功！',
+				          type: 'success'
+				        });
+					<%
+				}
+			}
+	if (request.getAttribute("vlist") == null) {
 				request.getRequestDispatcher("../vegetable?t=1").forward(request, response);
 			}
 			List<Vegetables> list = (ArrayList) request.getAttribute("vlist");
@@ -104,6 +157,7 @@
 				for (Vegetables v : list) {%>
 		app.putVegatable(<%=v.getVegetable_id()%>,'<%=v.getVegetable_kinds()%>',<%=v.getVegetable_number()%>,'<%=v.getVegetable_place()%>');
 	<%}
+				session.setAttribute("addstatus","");
 			}%>
 		
 	</script>

@@ -33,4 +33,22 @@ public class VegetablesMapper {
 		}
 		return list;
 	}
+	
+	public int addToVegetable(Vegetables v) {
+		String sql = "insert into Vegetable values(?,?,?,?)";
+		Object[] params= {v.getVegetable_id(),v.getVegetable_kinds(),v.getVegetable_number(),v.getVegetable_place()};
+		return bd.update(sql, params);
+	}
+	
+	public int deleteVegetableById(int id) {
+		String sql = "delete from Vegetable where vegetable_id = ?";
+		Object[] params = { id };
+		return bd.update(sql, params);
+	}
+	
+	public int updateById(Vegetables v) {
+		String sql = "UPDATE Vegetable SET vegetable_kinds = ?,vegetable_number = ?,vegetable_place = ? WHERE vegetable_id = ?";
+		Object[] params = {v.getVegetable_kinds(),v.getVegetable_number(),v.getVegetable_place(),v.getVegetable_id()};
+		return bd.update(sql, params);
+	} 
 }

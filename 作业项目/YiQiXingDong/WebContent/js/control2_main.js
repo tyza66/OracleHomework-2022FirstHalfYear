@@ -10,6 +10,14 @@ var app = new Vue({
       type: '',
       number: '',
       place: ''
+    },
+    dialogVisible2: false,
+    labelPosition2: 'right',
+    formLabelAlign2: {
+      id: '',
+      type: '',
+      number: '',
+      place: ''
     }
   },
   created: function () {
@@ -30,7 +38,18 @@ var app = new Vue({
         })
         .catch(_ => { });
     },
-    putVegatable(id,type,number,place){
+    handleClose2(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          this.formLabelAlign2.id = ''
+          this.formLabelAlign2.type = ''
+          this.formLabelAlign2.number = ''
+          this.formLabelAlign2.place = ''
+          done();
+        })
+        .catch(_ => { });
+    },
+    putVegatable(id, type, number, place) {
       var one = {
         id: id,
         type: type,
@@ -39,8 +58,23 @@ var app = new Vue({
       }
       this.tableData.push(one);
     },
-    insert(){
-      window.location.href = '../'
+    insert() {
+      window.location.href = '../vegetable?t=2&id=' + this.formLabelAlign.id + '&kind=' + this.formLabelAlign.type + '&number=' + this.formLabelAlign.number + "&place=" + this.formLabelAlign.place;
+    },
+    delete1(id) {
+      window.location.href = '../vegetable?t=3&id=' + id;
+    },
+    handleClick(row) {
+      this.formLabelAlign2 = {
+        id: row.id,
+        type: row.type,
+        number: row.number,
+        place: row.place
+      }
+      this.dialogVisible2 = true;
+    },
+    update(){
+      window.location.href = '../vegetable?t=4&id=' + this.formLabelAlign2.id + '&kind=' + this.formLabelAlign2.type + '&number=' + this.formLabelAlign2.number + "&place=" + this.formLabelAlign2.place;
     }
   }
 });

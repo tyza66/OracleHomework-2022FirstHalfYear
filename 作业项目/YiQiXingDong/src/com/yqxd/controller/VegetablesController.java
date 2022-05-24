@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.yqxd.entity.Vegetables;
 import com.yqxd.service.VegetablesService;
@@ -38,10 +39,49 @@ public class VegetablesController extends HttpServlet {
 		//how是用来判断请求的意图，就是我想每个实体，只用以一个sevlet实现全部功能
 		String how = request.getParameter("t");
 		VegetablesService v = new VegetablesServiceImp();
-		if(how.equals("1")) {
+		if(how.equals("1")) {//查询
 			List<Vegetables> vsList = v.getAllVegetable();
 			request.setAttribute("vlist",vsList);
 			request.getRequestDispatcher("jsp/control2.jsp").forward(request, response);
+		}else if(how.equals("2")) {//增加
+			String id = request.getParameter("id");
+			String kind = request.getParameter("kind");
+			String number = request.getParameter("number");
+			String place = request.getParameter("place");
+			int code = v.addVegetable(new Vegetables(Integer.parseInt(id),kind,Integer.parseInt(number),place));
+			HttpSession session = request.getSession();
+			if(code == 1) {
+				session.setAttribute("addstatus","ok");
+				response.sendRedirect("jsp/control2.jsp");
+			}else {
+				session.setAttribute("addstatus","no");
+				response.sendRedirect("jsp/control2.jsp");
+			}
+		}else if(how.equals("3")) {//删除
+			String id = request.getParameter("id");
+			int code = v.deleteVegetable(Integer.parseInt(id));
+			HttpSession session = request.getSession();
+			if(code == 1) {
+				session.setAttribute("addstatus","dl");
+				response.sendRedirect("jsp/control2.jsp");
+			}else {
+				session.setAttribute("addstatus","no");
+				response.sendRedirect("jsp/control2.jsp");
+			}
+		}else if(how.equals("4")) {
+			String id = request.getParameter("id");
+			String kind = request.getParameter("kind");
+			String number = request.getParameter("number");
+			String place = request.getParameter("place");
+			int code = v.updateVegetable(new Vegetables(Integer.parseInt(id),kind,Integer.parseInt(number),place));
+			HttpSession session = request.getSession();
+			if(code == 1) {
+				session.setAttribute("addstatus","up");
+				response.sendRedirect("jsp/control2.jsp");
+			}else {
+				session.setAttribute("addstatus","no");
+				response.sendRedirect("jsp/control2.jsp");
+			}
 		}
 	}
 
