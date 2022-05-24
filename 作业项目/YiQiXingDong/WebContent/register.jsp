@@ -67,7 +67,7 @@
 					v-model="userLogin.phone"></el-input> </el-form-item> <el-form-item label="科室号">
 				<el-input type="​number" class="input" v-model="userLogin.ks"></el-input>
 				</el-form-item> <el-form-item label="密码"> <el-input type="password"
-					clearable class="input" v-model="userLogin.password"> </el-input> </el-form-item>
+					clearable class="input" placeholder="密码不可超过12个字符" v-model="userLogin.password"> </el-input> </el-form-item>
 				<el-form-item label="验证码"> <el-input type="text"
 					clearable class="input2" v-model="userLogin.yanzheng"></el-input> <el-image
 					id="vc"
