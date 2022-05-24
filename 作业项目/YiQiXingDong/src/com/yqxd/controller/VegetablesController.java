@@ -48,8 +48,13 @@ public class VegetablesController extends HttpServlet {
 			String kind = request.getParameter("kind")==""?"0":request.getParameter("kind");
 			String number = request.getParameter("number")==""?"0":request.getParameter("number");
 			String place = request.getParameter("place")==""?"0":request.getParameter("place");
-			int code = v.addVegetable(new Vegetables(Integer.parseInt(id),kind,Integer.parseInt(number),place));
 			HttpSession session = request.getSession();
+			if(id.equals("0")&&kind.equals("0")&&number.equals("0")&&place.equals("0")) {
+				session.setAttribute("addstatus","no");
+				response.sendRedirect("jsp/control2.jsp");
+				return ;
+			}
+			int code = v.addVegetable(new Vegetables(Integer.parseInt(id),kind,Integer.parseInt(number),place));
 			if(code == 1) {
 				session.setAttribute("addstatus","ok");
 				response.sendRedirect("jsp/control2.jsp");
