@@ -80,7 +80,7 @@
 			:label-position="labelPosition" label-width="80px"
 			:model="formLabelAlign"> <el-form-item label="蔬菜ID">
 		<el-input v-model="formLabelAlign.id"></el-input> </el-form-item> <el-form-item
-			label="蔬菜种类"> <el-input v-model="formLabelAlign.type"></el-input>
+			label="种类"> <el-input v-model="formLabelAlign.type"></el-input>
 		</el-form-item> <el-form-item label="剩余量"> <el-input
 			v-model="formLabelAlign.number"></el-input> </el-form-item> <el-form-item
 			label="放置地点"> <el-input v-model="formLabelAlign.place"></el-input>
@@ -97,7 +97,7 @@
 			:before-close="handleClose2"> <el-form
 			:label-position="labelPosition2" label-width="80px"
 			:model="formLabelAlign2"> </el-input> </el-form-item> <el-form-item
-			label="蔬菜种类"> <el-input v-model="formLabelAlign2.type"></el-input>
+			label="种类"> <el-input v-model="formLabelAlign2.type"></el-input>
 		</el-form-item> <el-form-item label="剩余量"> <el-input
 			v-model="formLabelAlign2.number"></el-input> </el-form-item> <el-form-item
 			label="放置地点"> <el-input v-model="formLabelAlign2.place"></el-input>
