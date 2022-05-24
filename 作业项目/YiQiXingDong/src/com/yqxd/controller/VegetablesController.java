@@ -44,10 +44,10 @@ public class VegetablesController extends HttpServlet {
 			request.setAttribute("vlist",vsList);
 			request.getRequestDispatcher("jsp/control2.jsp").forward(request, response);
 		}else if(how.equals("2")) {//增加
-			String id = request.getParameter("id");
-			String kind = request.getParameter("kind");
-			String number = request.getParameter("number");
-			String place = request.getParameter("place");
+			String id = request.getParameter("id")==""?"0":request.getParameter("id");
+			String kind = request.getParameter("kind")==""?"0":request.getParameter("kind");
+			String number = request.getParameter("number")==""?"0":request.getParameter("number");
+			String place = request.getParameter("place")==""?"0":request.getParameter("place");
 			int code = v.addVegetable(new Vegetables(Integer.parseInt(id),kind,Integer.parseInt(number),place));
 			HttpSession session = request.getSession();
 			if(code == 1) {
@@ -69,10 +69,10 @@ public class VegetablesController extends HttpServlet {
 				response.sendRedirect("jsp/control2.jsp");
 			}
 		}else if(how.equals("4")) {
-			String id = request.getParameter("id");
-			String kind = request.getParameter("kind");
-			String number = request.getParameter("number");
-			String place = request.getParameter("place");
+			String id = request.getParameter("id")==""?"0":request.getParameter("id");
+			String kind = request.getParameter("kind")==""?"0":request.getParameter("kind");
+			String number = request.getParameter("number")==""?"0":request.getParameter("number");
+			String place = request.getParameter("place")==""?"0":request.getParameter("place");
 			int code = v.updateVegetable(new Vegetables(Integer.parseInt(id),kind,Integer.parseInt(number),place));
 			HttpSession session = request.getSession();
 			if(code == 1) {
