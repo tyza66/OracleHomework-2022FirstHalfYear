@@ -159,6 +159,7 @@
 	if(<%=friend.getZ10()%>==2){
 		app.value10 = true;	
 	}
+	session.setAttribute("addstatus","");
 	<%}%>
 	</script>
 </body>

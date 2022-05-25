@@ -57,7 +57,7 @@ public class FriendsController extends HttpServlet {
 			int code = fs.pushFriends(f);
 			HttpSession session = request.getSession();
 			if(code == 1) {
-				session.setAttribute("addstatus","ok");
+				session.setAttribute("addstatus","up");
 				response.sendRedirect("jsp/control6.jsp");
 			}else {
 				session.setAttribute("addstatus","no");
