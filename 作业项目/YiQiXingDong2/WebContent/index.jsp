@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/elementui.css">
-<link rel="stylesheet" href="./css/layer.css">
-<link rel="stylesheet" href="./css/index_main.css">
+<link rel="stylesheet" href="css/elementui.css">
+<link rel="stylesheet" href="css/layer.css">
+<link rel="stylesheet" href="css/index_main.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
 <title>登录</title>
@@ -44,8 +44,8 @@
 				<el-form :label-position="labelPosition" label-width="80px"
 					:model="userLogin">
 				<center style="margin: 10px auto;">
-					<el-radio v-model="userLogin.user" label="1">用户登录</el-radio>
-					<el-radio v-model="userLogin.user" label="2">管理员登录</el-radio>
+					<el-radio v-model="userLogin.user" label="1" style="display:none;">用户登录</el-radio>
+					<el-radio v-model="userLogin.user" label="2" style="display:none;">管理员登录</el-radio>
 				</center>
 				<el-form-item label="账号"> <el-input class="input"
 					v-model="userLogin.id"></el-input> </el-form-item> <el-form-item label="密码">
@@ -55,6 +55,7 @@
 					<el-button type="primary" @click="login()">登录</el-button>
 					<el-button type="primary" @click="register()">注册</el-button>
 				</center>
+				<center><el-button type="text" @click="userlogin()">用户登录</el-button></center>
 			</div>
 		</div>
 		</el-main>

@@ -13,7 +13,6 @@
     background-image: url(../img/bg1.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    filter: blur(5px);
 }
 
 .login {
@@ -28,4 +27,8 @@
 
 .input{
     width: 90%;
+}
+
+.input2{
+    width: 58%;
 }
